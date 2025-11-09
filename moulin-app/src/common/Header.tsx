@@ -1,4 +1,4 @@
-import { AppBar, Toolbar } from "@mui/material";
+import { AppBar, Toolbar, useTheme } from "@mui/material";
 import { Link } from "react-router";
 
 const Header = () => {
@@ -6,14 +6,17 @@ const Header = () => {
         <>
             <AppBar
                 position="static"
-                color={"default"}
+                style={{
+                    backgroundColor: "whitesmoke", 
+                }}
             >
                 <Toolbar>
                     <div style={{
                         display: "flex",
                         justifyContent: "center",
                         width: "100%",
-                        gap: "20px"
+                        gap: "20px",
+
                     }}>
                         <Link to="/historique">Historique</Link>
                         <Link to="/projet">Projet</Link>
@@ -21,7 +24,6 @@ const Header = () => {
                     </div>
                 </Toolbar>
             </AppBar>
-            <br/>
         </>
     )
 }
