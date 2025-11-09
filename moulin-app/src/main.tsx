@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router'
-import { createTheme, CssBaseline, ThemeProvider, useTheme } from '@mui/material'
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import Home from './pages/Home.tsx'
 import Header from './common/Header.tsx'
 import Footer from './common/Footer.tsx'
