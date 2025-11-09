@@ -35,17 +35,22 @@ jobs:
         with:
           node-version: lts/*
           cache: 'npm'
+          # Look for the lock file inside the `moulin-app` subfolder where package.json lives
+          cache-dependency-path: moulin-app/package-lock.json
       - name: Install dependencies
         run: npm ci
+        # install inside the subproject
+        working-directory: moulin-app
       - name: Build
         run: npm run build
+        working-directory: moulin-app
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
           # Upload dist folder
-          path: './dist'
+          path: 'moulin-app/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
