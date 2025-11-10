@@ -1,21 +1,12 @@
 import moulinMain from '../assets/HeroCropped.png'
-import { Grow, useTheme } from '@mui/material';
+import { Button, Grow } from '@mui/material';
 
 const Home = () => {
-    const theme = useTheme();
-
+    // new background gradient
     const cssVars = {
-        // CSS custom properties and computed stripes
-        '--s': '62px',
-        '--c1': theme.palette.secondary.main,
-        '--c2': theme.palette.primary.main,
-        '--l1': `transparent 48%, ${theme.palette.secondary.main} 0 52%, transparent 0`,
-        '--l2': `transparent 1.3%, ${theme.palette.primary.main} 0 32%, transparent 0`,
-        background: `linear-gradient(-45deg, var(--l2)),
-                     linear-gradient(45deg, var(--l1)),
-                     linear-gradient(45deg, var(--l2)) calc(var(--s)/2) calc(var(--s)/2),
-                     linear-gradient(-45deg, var(--l1)) var(--c2)`,
-        backgroundSize: `calc(2*var(--s)) var(--s), var(--s) var(--s)`
+        background: 'linear-gradient(90deg, rgba(234, 227, 217, 1.000) 0.000%, rgba(237, 227, 217, 1.000) 16.667%, rgba(233, 220, 209, 1.000) 33.333%, rgba(223, 207, 196, 1.000) 50.000%, rgba(208, 191, 180, 1.000) 66.667%, rgba(192, 174, 163, 1.000) 83.333%, rgba(177, 160, 149, 1.000) 100.000%)',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
     }
 
     return (
@@ -26,22 +17,36 @@ const Home = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 minHeight: "100vh",
-                alignContent: "center"
+                alignContent: "center",
             }}>
-                <h1>Moulin du Noiret</h1>
-                <h2>Saint Jorioz - Haute Savoie</h2>
                 <Grow in>
+                    {/* Use a real DOM element here (fragment won't accept ref) */}
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <h1 style={{
+                            fontFamily: 'Brush Script MT',
+                            fontSize: '72px',
+                            margin: 0
+                        }}>
+                            Moulin du Noiret
+                        </h1>
+                        <p style={{ fontSize: 18 }}>
+                            Bienvenue sur le site du projet de la restoration du moulin à St Jorioz!
+                        </p>
+                        <Button
+                            variant='contained'>
+                            Parcourir
+                        </Button>
 
-                    <img
-                        src={moulinMain}
-                        alt="moulin home"
-                        height={1000}
-                        style={{
-                            maxWidth: "95%",
-                            maxHeight: "87vh",
-                            margin: 20
-                        }}
-                    />
+                        <img
+                            src={moulinMain}
+                            alt="moulin home"
+                            style={{
+                                maxWidth: "90%",
+                                maxHeight: "55vh",
+                                margin: 20
+                            }}
+                        />
+                    </div>
                 </Grow>
             </div>
         </>

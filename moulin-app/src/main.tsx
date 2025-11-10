@@ -4,21 +4,16 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import Home from './pages/Home.tsx'
 import App from './App.tsx'
-import { grey } from '@mui/material/colors'
+import { blueGrey, grey } from '@mui/material/colors'
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: '#DFCFBE'  
-    },
+    primary: blueGrey,
     secondary: grey,
     text: {
-      primary: "black",
       secondary: "white"
     }
   },
-  typography: {
-  }
 })
 
 // App component moved to `./App.tsx`
