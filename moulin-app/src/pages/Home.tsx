@@ -30,7 +30,7 @@ const Home = () => {
                             Moulin du Noiret
                         </h1>
                         <p style={{ fontSize: 18 }}>
-                            Bienvenue sur le site du projet de la restoration du moulin à St Jorioz!
+                            Bienvenue sur le site du projet pour la restoration du moulin du Noiret à St Jorioz!
                         </p>
                         <Button
                             variant='contained'>
