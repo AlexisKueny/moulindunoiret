@@ -17,7 +17,7 @@ const History = () => {
         script.async = true;
 
         script.onload = () => {
-            const timeline = new (window as any).TL.Timeline(timelineRef.current, timelineData, {
+            const timeline = new (window).TL.Timeline(timelineRef.current, timelineData, {
                 initial_zoom: 10
             });
             const length = timelineData.events.length;
