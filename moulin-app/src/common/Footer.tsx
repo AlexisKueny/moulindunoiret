@@ -28,7 +28,7 @@ const Footer = () => {
                 >
                     <h3>Contact</h3>
                     <ul style={{ listStyle:"none", alignItems:"start", padding:0, margin:0 }}>
-                        <li>63 Clos de la Scierie, 74410 Saint-Jorioz</li>
+                        <li>110 Clos de la Scierie, 74410 Saint-Jorioz</li>
                         <li>alexis.kueny@outlook.com</li>
                         <li>+33 757064497</li>
                     </ul>
