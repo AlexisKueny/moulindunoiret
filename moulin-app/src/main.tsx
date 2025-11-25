@@ -17,13 +17,11 @@ const theme = createTheme({
   },
 })
 
-// App component moved to `./App.tsx`
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <CssBaseline >
       <ThemeProvider theme={theme}>
-        <HashRouter basename="/moulindunoiret/">
+        <HashRouter>
           <Routes>
             <Route path="/" element={<App />}>
               <Route index element={<Home />} />
