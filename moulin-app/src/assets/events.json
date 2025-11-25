@@ -1,18 +1,40 @@
 {
   "title": {
-    "media": { "url": "", "caption": "" },
-    "text": { "headline": "History Timeline", "body": "" }
+    "media": {
+      "url": "Essai3.png",
+      "caption": ""
+    },
+    "text": {
+      "headline": "History Timeline",
+      "body": ""
+    }
   },
   "events": [
     {
-      "start_date":{
-        "year":100,
-        "month":3,
-        "day":1,
-        "display_date":"100"
+      "start_date": {
+        "year": 1950,
+        "month": 3,
+        "day": 1
       },
-      "text": { "headline": "First Event", "text": "Description" },
-      "display_date": "1950"
+      "text": {
+        "headline": "First Event",
+        "text": "Description"
+      }
+    },
+    {
+      "start_date": {
+        "year": 2000,
+        "month": 3,
+        "day": 1
+      },
+      "media": {
+        "url": "/images/event2.png",
+        "caption": ""
+      },
+      "text": {
+        "headline": "Second Event",
+        "text": "Description"
+      }
     }
   ]
 }

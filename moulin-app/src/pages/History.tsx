@@ -1,73 +1,68 @@
 import { useEffect, useRef } from "react";
 import timelineData from "../assets/events.json";
+import Button from "@mui/material/Button";
 
-interface TimelineAPI {
-    Timeline: new (element: HTMLElement | null, data: Record<string, unknown>, options?: { initial_zoom?: number }) => {
-        goToNext(): void;
-        goToStart(): void;
-    };
-}
+declare const TL: { Timeline: new (element: Element | null, data: object, params: object) => Timeline };
 
-declare global {
-    interface Window {
-        TL: TimelineAPI;
-    }
+declare interface Timeline {
+    goToNext: () => void;
+    goToStart: () => void;
 }
 
 const History = () => {
-    const timelineRef = useRef<HTMLDivElement>(null);
+    const timelineRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        // Load CSS
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = "https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css";
-        document.head.appendChild(link);
+        // Load TimelineJS library if not already loaded
+        // Initialize timeline after library loads
+        const timeline = new TL.Timeline(timelineRef.current, timelineData, {
+            scale_factor: 0.5
+        });
+        const length = (timelineData as { events: unknown[] }).events.length;
+        let count = 0;
 
-        // Load JS
-        const script = document.createElement("script");
-        script.src = "https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js";
-        script.async = true;
-
-        script.onload = () => {
-            const timeline = new window.TL.Timeline(timelineRef.current, timelineData as Record<string, unknown>, {
-                initial_zoom: 10
-            });
-            const length = (timelineData as { events: unknown[] }).events.length;
-            let count = 0;
-
-            const loadNextSlide = () => {
-                try {
-                    if (count < length) {
-                        timeline.goToNext();
-                        count++;
-                        console.log("COUNT", count);
-                    }
-                    else {
+        const loadNextSlide = () => {
+            try {
+                if (count < length) {
+                    timeline.goToNext();
+                    count++;
+                    console.log("COUNT", count);
+                }
+                else {
+                    timeline.goToStart();
+                    count = 0;
+                }
+            } catch (err) {
+                if (err instanceof TypeError) {
+                    console.log(err.message);
+                    if (err.message === "Cannot read property 'unique_id' of undefined") {
                         timeline.goToStart();
-                        count = 0;
-                    }
-                } catch (err) {
-                    if (err instanceof TypeError) {
-                        console.log(err.message);
-                        if (err.message === "Cannot read property 'unique_id' of undefined") {
-                            timeline.goToStart();
-                        }
                     }
                 }
-            };
-
-            setInterval(loadNextSlide, 5000);
+            }
         };
-        document.body.appendChild(script);
+
+        setInterval(loadNextSlide, 5000);
     }, []);
 
     return (
         <div>
-            <h1>Timeline</h1>
-            <div ref={timelineRef} id="timeline" style={{ height: 600, width:"100%" }} />
+            <div
+                style={{
+                    display: "flex"
+                }}
+            >
+                <h1>Timeline</h1>
+                <Button
+
+                >Play</Button>
+                <Button>Stop</Button>
+            </div>
+
+            <div ref={timelineRef} id="timeline-embed" style={{ height: "600px" }}></div>
+            <br />
         </div>
-    )
-}
+    );
+};
 
 export default History;
