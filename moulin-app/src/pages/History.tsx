@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import timelineData from "../assets/events.json";
 import Button from "@mui/material/Button";
+import Select from "@mui/material/Select";
+import { FormControl, InputLabel, MenuItem } from "@mui/material";
 
 declare const TL: { Timeline: new (element: Element | null, data: object, params: object) => Timeline };
 
@@ -52,11 +54,22 @@ const History = () => {
                     display: "flex"
                 }}
             >
-                <h1>Timeline</h1>
-                <Button
-
-                >Play</Button>
+                <Button>Play</Button>
                 <Button>Stop</Button>
+                <FormControl sx={{minWidth: 210}}>
+
+                    <InputLabel id="demo-simple-select-label">Selectionner un thème</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        label="Selectionner un thème"
+                        autoWidth
+                    >
+                        <MenuItem >Ten</MenuItem>
+                        <MenuItem value={20}>Twenty</MenuItem>
+                        <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                </FormControl>
             </div>
 
             <div ref={timelineRef} id="timeline-embed" style={{ height: "600px" }}></div>
