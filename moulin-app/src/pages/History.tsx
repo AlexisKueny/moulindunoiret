@@ -15,8 +15,6 @@ const History = () => {
     const timelineRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        // Load TimelineJS library if not already loaded
-        // Initialize timeline after library loads
         const timeline = new TL.Timeline(timelineRef.current, timelineData, {
             scale_factor: 0.5,
         });
@@ -48,16 +46,19 @@ const History = () => {
     }, []);
 
     return (
-        <div>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
             <div
                 style={{
-                    display: "flex"
+                    display: "flex",
+                    gap: 20,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginBottom: 20
                 }}
             >
-                <Button>Play</Button>
-                <Button>Stop</Button>
+                <Button variant="contained">Play</Button>
+                <Button variant="contained">Stop</Button>
                 <FormControl sx={{minWidth: 210}}>
-
                     <InputLabel id="demo-simple-select-label">Selectionner un thème</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
@@ -72,7 +73,9 @@ const History = () => {
                 </FormControl>
             </div>
 
-            <div ref={timelineRef} id="timeline-embed" style={{ height: "700px" }}></div>
+            <div style={{ display: "flex", justifyContent: "center", width: "100%", marginTop: 20 }}>
+                <div ref={timelineRef} id="timeline-embed" style={{ height: "700px", width: "95%", maxWidth: "1200px" }}></div>
+            </div>
             <br />
         </div>
     );
