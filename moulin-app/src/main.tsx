@@ -30,6 +30,7 @@ createRoot(document.getElementById('root')!).render(
               <Route path="historique" element={<History/>} />
               <Route path="projet" element={<h1>Projet</h1>} />
               <Route path="travaux" element={<h1>Travaux</h1>} />
+              <Route path="contact" element={<h1>Contact</h1>} />
               <Route path="*" element={<h1>Page non trouvée</h1>} />
             </Route>
           </Routes>

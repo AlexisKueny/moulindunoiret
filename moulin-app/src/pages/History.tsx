@@ -42,7 +42,7 @@ const History = () => {
             }
         };
 
-        setInterval(loadNextSlide, 10000);
+        setInterval(loadNextSlide, 50000);
     }, []);
 
     return (
@@ -52,7 +52,7 @@ const History = () => {
                     display: "flex"
                 }}
             >
-                <h1>Timeline</h1>
+                
                 <Button
 
                 >Play</Button>
