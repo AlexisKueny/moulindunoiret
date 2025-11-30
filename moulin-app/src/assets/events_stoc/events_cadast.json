@@ -1,0 +1,75 @@
+{
+  "title": {
+    "media": {
+      "url": "Essai3.png",
+      "caption": ""
+    },
+    "text": {
+      "headline": "Le moulin sur les cadastres",
+      "body": ""
+    }
+  },
+  "events": [
+    {
+      "start_date": {
+        "year": 1730
+      },
+      "text": {
+        "headline": "Mappe Sarde",
+        "text": ""
+      },
+      "media": {
+        "url": "MapSard-0.jpg",
+        "caption": ""
+      }
+    },
+       {
+      "start_date": {
+        "year": 1731
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      },
+      "media": {
+        "url": "MapSard-3.jpg",
+        "caption": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": 1866
+      },
+      "media": {
+        "url": "M4_Cadastre.jpg",
+        "caption": ""
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": 1867
+      },
+      "media": {
+        "url": "Cadastre1866.jpg",
+        "caption": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": 2025
+      },
+      "media": {
+        "url": "Cadastre2025.jpg",
+        "caption": ""
+      },
+      "text": {
+        "headline": "Cadastre 2025",
+        "text": ""
+      }
+    }
+  ]
+}

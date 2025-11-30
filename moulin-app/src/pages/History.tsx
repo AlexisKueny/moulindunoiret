@@ -42,7 +42,7 @@ const History = () => {
             }
         };
 
-        setInterval(loadNextSlide, 10000);
+        setInterval(loadNextSlide, 50000);
     }, []);
 
     return (

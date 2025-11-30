@@ -24,19 +24,15 @@ const Home = () => {
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <h1 style={{
                             fontFamily: 'Brush Script MT',
-                            fontSize: '72px',
+                            fontSize: '36px',
                             margin: 0
                         }}>
                             Moulin du Noiret
                         </h1>
-                        <p style={{ fontSize: 18 }}>
+                        <p style={{ fontSize: 14 }}>
                             Bienvenue sur le site de la restauration du moulin du Noiret à St Jorioz!
                         </p>
-                        <Button
-                            variant='contained'>
-                            Parcourir
-                        </Button>
-
+ 
                         <img
                             src={moulinMain}
                             alt="moulin home"

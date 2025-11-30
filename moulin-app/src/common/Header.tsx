@@ -50,6 +50,12 @@ const Header = () => {
                 <h3>Travaux</h3>
               </Stack>
             </Link>
+            <Link to="/contact" style={{ textDecoration: "none", color: theme.palette.text.primary }}>
+              <Stack direction={"row"} alignItems={"center"}>
+                <HistoryEduRoundedIcon />
+                <h3>Contact</h3>
+              </Stack>
+            </Link>
           </div>
         </Toolbar>
       </AppBar>
