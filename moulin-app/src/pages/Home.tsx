@@ -1,5 +1,5 @@
 import moulinMain from '../assets/HeroCropped.png'
-import { Button, Grow } from '@mui/material';
+import { Grow } from '@mui/material';
 
 const Home = () => {
     // new background gradient
