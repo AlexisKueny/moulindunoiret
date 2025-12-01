@@ -1,7 +1,9 @@
-import { useEffect, useRef } from "react";
-import timelineData from "../assets/cadastres.json";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import cadastresData from "../assets/cadastres.json";
+import scierieData from "../assets/scierie.json";
+import proprietairesData from "../assets/proprietaires.json";
 import Button from "@mui/material/Button";
-import Select from "@mui/material/Select";
+import Select, { type SelectChangeEvent } from "@mui/material/Select";
 import { FormControl, InputLabel, MenuItem } from "@mui/material";
 
 declare const TL: { Timeline: new (element: Element | null, data: object, params: object) => Timeline };
@@ -13,24 +15,50 @@ declare interface Timeline {
 
 const History = () => {
     const timelineRef = useRef<HTMLDivElement | null>(null);
+    const timelineInstanceRef = useRef<Timeline | null>(null);
+    const countRef = useRef<number>(0);
+    const [selectedTimeline, setSelectedTimeline] = useState<string>("cadastres");
+    const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
+    const getTimelineData = (timeline: string) => {
+        switch (timeline) {
+            case "cadastres":
+                return cadastresData;
+            case "scierie":
+                return scierieData;
+            default:
+                return proprietairesData;
+        }
+    };
+
+    // Only create timeline when selectedTimeline changes
     useEffect(() => {
+        const timelineData = getTimelineData(selectedTimeline);
         const timeline = new TL.Timeline(timelineRef.current, timelineData, {
             scale_factor: 0.5,
         });
+        timelineInstanceRef.current = timeline;
+        countRef.current = 0;
+    }, [selectedTimeline]);
+
+    // Only handle autoplay when isPlaying changes
+    useEffect(() => {
+        if (!timelineInstanceRef.current || !isPlaying) return;
+
+        const timeline = timelineInstanceRef.current;
+        const timelineData = getTimelineData(selectedTimeline);
         const length = (timelineData as { events: unknown[] }).events.length;
-        let count = 0;
 
         const loadNextSlide = () => {
             try {
-                if (count < length) {
+                if (countRef.current < length) {
                     timeline.goToNext();
-                    count++;
-                    console.log("COUNT", count);
+                    countRef.current++;
+                    console.log("COUNT", countRef.current);
                 }
                 else {
                     timeline.goToStart();
-                    count = 0;
+                    countRef.current = 0;
                 }
             } catch (err) {
                 if (err instanceof TypeError) {
@@ -42,8 +70,17 @@ const History = () => {
             }
         };
 
-        setInterval(loadNextSlide, 50000);
-    }, []);
+        const intervalId = setInterval(loadNextSlide, 5000);
+        return () => clearInterval(intervalId);
+    }, [isPlaying]);
+
+    const handleChange = (event: SelectChangeEvent) => {
+        setSelectedTimeline(event.target.value);
+    };
+
+    const toggleAutoplay = () => {
+        setIsPlaying(!isPlaying);
+    };
 
     return (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
@@ -56,27 +93,28 @@ const History = () => {
                     marginBottom: 20
                 }}
             >
-                <Button variant="contained">Play</Button>
-                <Button variant="contained">Stop</Button>
-                <FormControl sx={{minWidth: 210}}>
-                    <InputLabel id="demo-simple-select-label">Selectionner un thème</InputLabel>
+                <Button variant="contained" onClick={toggleAutoplay}>
+                    {isPlaying ? "Pause" : "Play"}
+                </Button>
+                <FormControl sx={{ width: "220px" }} size="small">
+                    <InputLabel id="demo-simple-select-label" sx={{color:"black"}}>Choisir une chronologie</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        label="Selectionner un thème"
-                        autoWidth
+                        label="Choisir une chronologie"
+                        value={selectedTimeline}
+                        onChange={handleChange}
                     >
-                        <MenuItem >Ten</MenuItem>
-                        <MenuItem value={20}>Twenty</MenuItem>
-                        <MenuItem value={30}>Thirty</MenuItem>
+                        <MenuItem value="cadastres">Cadastres</MenuItem>
+                        <MenuItem value="scierie">Scierie</MenuItem>
+                        <MenuItem value="proprietaires">Proprietaires</MenuItem>
                     </Select>
                 </FormControl>
             </div>
 
-            <div style={{ display: "flex", justifyContent: "center", width: "100%", marginTop: 20 }}>
-                <div ref={timelineRef} id="timeline-embed" style={{ height: "700px", width: "95%", maxWidth: "1200px" }}></div>
+            <div style={{ display: "flex", justifyContent: "center", width: "100%",  marginBottom: 50 }}>
+                <div ref={timelineRef} id="timeline-embed" style={{ height: "700px", width: "100%"}}></div>
             </div>
-            <br />
         </div>
     );
 };
