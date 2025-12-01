@@ -72,7 +72,7 @@ const History = () => {
 
         const intervalId = setInterval(loadNextSlide, 5000);
         return () => clearInterval(intervalId);
-    }, [isPlaying]);
+    }, [isPlaying, selectedTimeline]);
 
     const handleChange = (event: SelectChangeEvent) => {
         setSelectedTimeline(event.target.value);
