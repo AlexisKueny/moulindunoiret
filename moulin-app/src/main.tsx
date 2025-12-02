@@ -21,7 +21,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <CssBaseline >
       <ThemeProvider theme={theme}>
-        <BrowserRouter basename='moulindunoiret/'>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Routes>
             <Route element={<App />}>
               <Route index element={<Home />} />
