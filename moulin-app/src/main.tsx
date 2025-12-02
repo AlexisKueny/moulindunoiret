@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from 'react-router'
+import { HashRouter, Route, Routes } from 'react-router'
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import Home from './pages/Home.tsx'
 import App from './App.tsx'
@@ -21,7 +21,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <CssBaseline >
       <ThemeProvider theme={theme}>
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <HashRouter>
           <Routes>
             <Route element={<App />}>
               <Route index element={<Home />} />
@@ -32,7 +32,7 @@ createRoot(document.getElementById('root')!).render(
               <Route path="*" element={<h1>Page non trouvée</h1>} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </ThemeProvider>
     </CssBaseline>
   </StrictMode>
