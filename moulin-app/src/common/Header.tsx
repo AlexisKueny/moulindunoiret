@@ -4,6 +4,7 @@ import HistoryEduRoundedIcon from '@mui/icons-material/HistoryEduRounded';
 import ArchitectureRoundedIcon from '@mui/icons-material/ArchitectureRounded';
 import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
 import { HomeRounded } from "@mui/icons-material";
+import NewspaperRoundedIcon from '@mui/icons-material/NewspaperRounded';
 
 const Header = () => {
   const theme = useTheme();
@@ -50,10 +51,10 @@ const Header = () => {
                 <h3>Travaux</h3>
               </Stack>
             </Link>
-            <Link to="/contact" style={{ textDecoration: "none", color: theme.palette.text.primary }}>
+            <Link to="/newsletter" style={{ textDecoration: "none", color: theme.palette.text.primary }}>
               <Stack direction={"row"} alignItems={"center"}>
-                <HistoryEduRoundedIcon />
-                <h3>Contact</h3>
+                <NewspaperRoundedIcon />
+                <h3>Newsletter</h3>
               </Stack>
             </Link>
           </div>

@@ -1,5 +1,5 @@
 import moulinMain from '../assets/HeroCropped.png'
-import { Button, Grow } from '@mui/material';
+import { Grow } from '@mui/material';
 
 const Home = () => {
     // new background gradient
@@ -24,12 +24,12 @@ const Home = () => {
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <h1 style={{
                             fontFamily: 'Brush Script MT',
-                            fontSize: '36px',
+                            fontSize: '72px',
                             margin: 0
                         }}>
                             Moulin du Noiret
                         </h1>
-                        <p style={{ fontSize: 14 }}>
+                        <p style={{ fontSize: 20 }}>
                             Bienvenue sur le site de la restauration du moulin du Noiret à St Jorioz!
                         </p>
  

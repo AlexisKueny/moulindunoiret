@@ -36,7 +36,7 @@ const Footer = () => {
                 <div className="mapColumn">
                     <h3>Carte</h3>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1390.0954806741556!2d6.151206538872!3d45.82745899277053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478b9126e906cce7%3A0xf98bfb8d8d443354!2s63%20Clos%20de%20la%20Scierie%2C%2074410%20Saint-Jorioz!5e0!3m2!1sen!2sfr!4v1762693932798!5m2!1sen!2sfr"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1390.0954806741556!2d6.151206538872!3d45.82745899277053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478b9126e906cce7%3A0xf98bfb8d8d443354!2s110%20Clos%20de%20la%20Scierie%2C%2074410%20Saint-Jorioz!5e0!3m2!1sen!2sfr!4v1762693932798!5m2!1sen!2sfr"
                         width="300"
                         height="225"
                         style={{ border: 0 }}

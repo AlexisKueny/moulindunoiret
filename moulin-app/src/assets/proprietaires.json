@@ -1,0 +1,19 @@
+{
+  "title": {
+    "text": {
+      "headline": "Les propriétaires du moulin",
+      "body": ""
+    }
+  },
+  "events": [
+    {
+      "start_date": {
+        "year": 1800
+      },
+      "text": {
+        "headline": "Premier propriétaire",
+        "text": "Description du premier propriétaire"
+      }
+    }
+  ]
+}

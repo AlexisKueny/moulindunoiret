@@ -1,0 +1,209 @@
+{
+  "title": {
+    "media": {
+      "url": "Essai3.png",
+      "caption": ""
+    },
+    "text": {
+      "headline": "Les architectes",
+      "body": ""
+    }
+  },
+  "events": [
+    {
+      "start_date": {
+        "year": "2002",
+        "month":"10",
+        "day": "01"
+      },
+      "text": {
+        "headline": "F. Chatillon https://architecte-chatillon.com",
+        "text": ""
+      },
+      "media": {
+        "url": "images_W1/01Luzzi.jpg",
+        "caption": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "01"
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      },
+      "media": {
+        "url": "images_W1/02Luzzi.jpg",
+        "caption": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "02"
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      },
+      "media": {
+        "url": "images_W1/03Luzzi.jpg",
+        "caption": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "03"
+      },
+      "media": {
+        "url": "images_W1/04Luzzi.jpg",
+        "caption": ""
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "04"
+      },
+      "media": {
+        "url": "images_W1/05Luzzi.jpg",
+        "caption": ""
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "05"
+      },
+      "media": {
+        "url": "images_W1/06Dujourdy.jpg",
+        "caption": ""
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "06"
+      },
+      "media": {
+        "url": "images_W1/07Dujourdy.jpg",
+        "caption": ""
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "07"
+      },
+      "media": {
+        "url": "images_W1/08Dujourdy.jpg",
+        "caption": ""
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "08"
+      },
+      "media": {
+        "url": "images_W1/09Dujourdy.jpg",
+        "caption": ""
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "09"
+      },
+      "media": {
+        "url": "images_W1/10Dujourdy.jpg",
+        "caption": ""
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "10"
+      },
+      "media": {
+        "url": "images_W1/11Dujourdy.jpg",
+        "caption": ""
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "11"
+      },
+      "media": {
+        "url": "images_W1/12Dujourdy.jpg",
+        "caption": ""
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "12"
+      },
+      "media": {
+        "url": "images_W1/13Dujourdy.jpg",
+        "caption": ""
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      }
+    }
+  ]
+}
