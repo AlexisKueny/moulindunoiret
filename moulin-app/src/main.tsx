@@ -24,7 +24,7 @@ createRoot(document.getElementById('root')!).render(
       <ThemeProvider theme={theme}>
         <HashRouter>
           <Routes>
-            <Route path="/" element={<App />}>
+            <Route element={<App />}>
               <Route index element={<Home />} />
               <Route path="historique" element={<History/>} />
               <Route path="projet" element={<h1>Projet</h1>} />
