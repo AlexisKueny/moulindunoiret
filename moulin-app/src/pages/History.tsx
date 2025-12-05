@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import cadastresData from "../assets/cadastres.json";
 import scierieData from "../assets/scierie.json";
 import proprietairesData from "../assets/proprietaires.json";
+import moul2001Data from "../assets/moul2001.json";
 import Button from "@mui/material/Button";
 import Select, { type SelectChangeEvent } from "@mui/material/Select";
 import { FormControl, InputLabel, MenuItem } from "@mui/material";
@@ -26,6 +27,8 @@ const History = () => {
                 return cadastresData;
             case "scierie":
                 return scierieData;
+            case "2001":
+                return moul2001Data;
             default:
                 return proprietairesData;
         }
@@ -70,7 +73,7 @@ const History = () => {
             }
         };
 
-        const intervalId = setInterval(loadNextSlide, 5000);
+        const intervalId = setInterval(loadNextSlide, 3000);
         return () => clearInterval(intervalId);
     }, [isPlaying, selectedTimeline]);
 
@@ -108,6 +111,7 @@ const History = () => {
                         <MenuItem value="cadastres">Cadastres</MenuItem>
                         <MenuItem value="scierie">Scierie</MenuItem>
                         <MenuItem value="proprietaires">Proprietaires</MenuItem>
+                        <MenuItem value="le moulin en 2001">2001</MenuItem>
                     </Select>
                 </FormControl>
             </div>

@@ -5,43 +5,64 @@
       "caption": ""
     },
     "text": {
-      "headline": "Le moulin sur les cadastres",
+      "headline": "Les architectes",
       "body": ""
     }
   },
   "events": [
     {
       "start_date": {
-        "year": 1730
+        "year": "2002",
+        "month":"10",
+        "day": "01"
       },
       "text": {
-        "headline": "Mappe Sarde",
+        "headline": "F. Chatillon https://architecte-chatillon.com",
         "text": ""
       },
       "media": {
-        "url": "images_cadastres/MapSard-0.jpg",
+        "url": "images_W1/01Luzzi.jpg",
         "caption": ""
       }
     },
     {
       "start_date": {
-        "year": 1731
+        "year": "2003",
+        "month":"10",
+        "day": "01"
       },
       "text": {
         "headline": "",
         "text": ""
       },
       "media": {
-        "url": "images_cadastres/MapSard-3.jpg",
+        "url": "images_W1/02Luzzi.jpg",
         "caption": ""
       }
     },
     {
       "start_date": {
-        "year": 1866
+        "year": "2003",
+        "month":"10",
+        "day": "02"
+      },
+      "text": {
+        "headline": "",
+        "text": ""
       },
       "media": {
-        "url": "images_cadastres/M4_Cadastre.jpg",
+        "url": "images_W1/03Luzzi.jpg",
+        "caption": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": "2003",
+        "month":"10",
+        "day": "03"
+      },
+      "media": {
+        "url": "images_W1/04Luzzi.jpg",
         "caption": ""
       },
       "text": {
@@ -51,27 +72,16 @@
     },
     {
       "start_date": {
-        "year": 1867
+        "year": "2003",
+        "month":"10",
+        "day": "04"
       },
       "media": {
-        "url": "images_cadastres/Cadastre1866.jpg",
+        "url": "images_W1/05Luzzi.jpg",
         "caption": ""
       },
       "text": {
-        "headline": "Cadastre 1868 - zoom",
-        "text": ""
-      }
-    },
-    {
-      "start_date": {
-        "year": 2025
-      },
-      "media": {
-        "url": "images_cadastres/Cadastre2025.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "Cadastre 2025",
+        "headline": "",
         "text": ""
       }
     }
