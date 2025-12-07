@@ -1,18 +1,52 @@
 {
   "title": {
+    "media": {
+      "url": "Essai3.png",
+      "caption": ""
+    },
     "text": {
-      "headline": "Les propriétaires du moulin",
+      "headline": "Le moulin sur les cadastres",
       "body": ""
     }
   },
   "events": [
     {
       "start_date": {
-        "year": 1800
+        "year": 1
       },
       "text": {
-        "headline": "Premier propriétaire",
-        "text": "Description du premier propriétaire"
+        "headline": "Propriétaires du moulin",
+        "text": ""
+      },
+      "media": {
+        "url": "images_H1/P0.jpg",
+        "caption": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": 2
+      },
+      "text": {
+        "headline": "Propriétaires du moulin",
+        "text": ""
+      },
+      "media": {
+        "url": "images_H1/P1.jpg",
+        "caption": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": 3
+      },
+      "text": {
+        "headline": "Propriétaires du moulin",
+        "text": ""
+      },
+      "media": {
+        "url": "images_H1/P2.jpg",
+        "caption": ""
       }
     }
   ]
