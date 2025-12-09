@@ -15,9 +15,10 @@ const History = () => {
     const getDisplay = () => {
         switch (selectedDisplay) {
             case "cadastres":
-            case "proprietaires":
+            case "proprietaires": {
                 const data = selectedDisplay === "cadastres" ? cadastresData : proprietairesData;
                 return <TimelinePlayer key="timeline" data={data} isPlaying={isPlaying} />;
+            }
             case "scierie":
                 return <AutoCarousel key="carousel" data={scierieData} isPlaying={isPlaying} interval={3000}/>;
             default:
