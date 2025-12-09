@@ -16,6 +16,7 @@
     "@knight-lab/timelinejs": "^3.9.8",
     "@mui/icons-material": "^7.3.5",
     "@mui/material": "^7.3.5",
+    "antd": "^6.1.0",
     "react": "^19.1.1",
     "react-chrono": "^3.2.1",
     "react-dom": "^19.1.1",

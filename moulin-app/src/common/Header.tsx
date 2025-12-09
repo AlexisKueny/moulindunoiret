@@ -3,65 +3,37 @@ import { Link } from "react-router";
 import HistoryEduRoundedIcon from '@mui/icons-material/HistoryEduRounded';
 import ArchitectureRoundedIcon from '@mui/icons-material/ArchitectureRounded';
 import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
-import { HomeRounded } from "@mui/icons-material";
+import { HomeRounded, type SvgIconComponent } from "@mui/icons-material";
 import NewspaperRoundedIcon from '@mui/icons-material/NewspaperRounded';
 
 const Header = () => {
   const theme = useTheme();
 
+  const linkStyle = { textDecoration: "none", color: theme.palette.text.primary };
+  const stackStyle = { textDecoration: "underline" };
+
+  const NavLink = ({ to, icon: Icon, label }: { to: string; icon: SvgIconComponent; label: string }) => (
+    <Link to={to} style={linkStyle}>
+      <Stack direction={"row"} alignItems={"center"} gap={0} sx={stackStyle}>
+        <Icon />
+        <h3 style={{ margin: 0 }}>{label}</h3>
+      </Stack>
+    </Link>
+  );
+
   return (
-    <>
-      <AppBar
-        position="static"
-        color="transparent"
-        elevation={0}
-        style={{
-          boxShadow: 'none'
-        }}
-      >
-        <Toolbar>
-          <div style={{
-            display: "flex",
-            justifyContent: "center",
-            width: "100%",
-            gap: "20px",
-            textDecoration: "underline"
-          }}>
-            <Link to="/" style={{ textDecoration: "none", color: theme.palette.text.primary }}>
-              <Stack direction={"row"} alignItems={"center"}>
-                <HomeRounded/>
-                <h3>Accueil</h3>
-              </Stack>
-            </Link>
-            <Link to="/historique" style={{ textDecoration: "none", color: theme.palette.text.primary }}>
-              <Stack direction={"row"} alignItems={"center"}>
-                <HistoryEduRoundedIcon />
-                <h3>Historique</h3>
-              </Stack>
-            </Link>
-            <Link to="/projet" style={{ textDecoration: "none", color: theme.palette.text.primary }}>
-              <Stack direction={"row"} alignItems={"center"}>
-                <ArchitectureRoundedIcon />
-                <h3>Projet</h3>
-              </Stack>
-            </Link>
-            <Link to="/travaux" style={{ textDecoration: "none", color: theme.palette.text.primary }}>
-              <Stack direction={"row"} alignItems={"center"}>
-                <ConstructionRoundedIcon />
-                <h3>Travaux</h3>
-              </Stack>
-            </Link>
-            <Link to="/newsletter" style={{ textDecoration: "none", color: theme.palette.text.primary }}>
-              <Stack direction={"row"} alignItems={"center"}>
-                <NewspaperRoundedIcon />
-                <h3>Newsletter</h3>
-              </Stack>
-            </Link>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </>
-  )
-}
+    <AppBar position="static" color="transparent" elevation={0} style={{ boxShadow: 'none' }}>
+      <Toolbar>
+        <div style={{ display: "flex", justifyContent: "center", width: "100%", gap: "20px" }}>
+          <NavLink to="/" icon={HomeRounded} label="Accueil" />
+          <NavLink to="/historique" icon={HistoryEduRoundedIcon} label="Historique" />
+          <NavLink to="/projet" icon={ArchitectureRoundedIcon} label="Projet" />
+          <NavLink to="/travaux" icon={ConstructionRoundedIcon} label="Travaux" />
+          <NavLink to="/newsletter" icon={NewspaperRoundedIcon} label="Newsletter" />
+        </div>
+      </Toolbar>
+    </AppBar>
+  );
+};
 
 export default Header;
