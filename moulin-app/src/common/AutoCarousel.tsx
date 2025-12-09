@@ -2,7 +2,7 @@ import { Carousel } from "antd";
 import "antd/dist/reset.css";
 
 interface AutoCarouselProps {
-    data: Object,
+    data: object,
     isPlaying: boolean,
     interval: number
 }

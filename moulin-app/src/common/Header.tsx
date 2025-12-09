@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import HistoryEduRoundedIcon from '@mui/icons-material/HistoryEduRounded';
 import ArchitectureRoundedIcon from '@mui/icons-material/ArchitectureRounded';
 import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
-import { HomeRounded } from "@mui/icons-material";
+import { HomeRounded, type SvgIconComponent } from "@mui/icons-material";
 import NewspaperRoundedIcon from '@mui/icons-material/NewspaperRounded';
 
 const Header = () => {
@@ -12,7 +12,7 @@ const Header = () => {
   const linkStyle = { textDecoration: "none", color: theme.palette.text.primary };
   const stackStyle = { textDecoration: "underline" };
 
-  const NavLink = ({ to, icon: Icon, label }: { to: string; icon: any; label: string }) => (
+  const NavLink = ({ to, icon: Icon, label }: { to: string; icon: SvgIconComponent; label: string }) => (
     <Link to={to} style={linkStyle}>
       <Stack direction={"row"} alignItems={"center"} gap={0} sx={stackStyle}>
         <Icon />

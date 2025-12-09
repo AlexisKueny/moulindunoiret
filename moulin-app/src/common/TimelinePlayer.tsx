@@ -9,12 +9,10 @@ declare interface Timeline {
 
 interface TimelinePlayerProps {
     data: object;
-    isPlaying: boolean;
-    interval?: number;
-    timelineOptions?: Record<string, unknown>;
+    isPlaying: boolean
 }
 
-export const TimelinePlayer = ({ data, isPlaying, interval = 3000, timelineOptions = {} }: TimelinePlayerProps) => {
+export const TimelinePlayer = ({ data, isPlaying}: TimelinePlayerProps) => {
     const timelineRef = useRef<HTMLDivElement | null>(null);
     const timelineInstanceRef = useRef<Timeline | null>(null);
     const countRef = useRef<number>(0);
@@ -22,7 +20,6 @@ export const TimelinePlayer = ({ data, isPlaying, interval = 3000, timelineOptio
     useEffect(() => {
         const timeline = new TL.Timeline(timelineRef.current, data, {
             scale_factor: 0.5,
-            ...timelineOptions,
         });
         timelineInstanceRef.current = timeline;
         countRef.current = 0;
@@ -50,7 +47,7 @@ export const TimelinePlayer = ({ data, isPlaying, interval = 3000, timelineOptio
             }
         };
 
-        const intervalId = setInterval(loadNextSlide, interval);
+        const intervalId = setInterval(loadNextSlide, 3000);
         return () => clearInterval(intervalId);
     }, [isPlaying]);
 
