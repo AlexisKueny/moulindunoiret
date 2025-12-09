@@ -17,6 +17,8 @@ const AutoCarousel = ({ data, isPlaying, interval = 3000 }: AutoCarouselProps) =
         background: '#D3D3D3 ',
     };
 
+    console.log(data);
+
     return (
         <div style={{ width: "100%", height: "700px", overflow: "hidden" }}>
             <Carousel 
