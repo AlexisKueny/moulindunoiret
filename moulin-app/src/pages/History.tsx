@@ -45,7 +45,7 @@ const History = () => {
                     </Select>
                 </FormControl>
             </div>
-            <div style={{ display: "flex", justifyContent: "center", width: "100%", marginBottom: 50, height: "700px" }}>
+            <div style={{ display: "flex", justifyContent: "center", width: "100%", marginBottom: 50, height: "650px" }}>
                 {getDisplay()}
             </div>
         </div>
