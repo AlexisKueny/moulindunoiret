@@ -10,7 +10,10 @@ const Footer = () => {
                 color: theme.palette.text.secondary,
                 display: "block",
                 width: "100%",
-                textAlign: "center"
+                textAlign: "center",
+                left: 0,
+                bottom: 0,
+                right: 0,
             }}>
             <div className="footerContent"
                 style={{
@@ -20,14 +23,14 @@ const Footer = () => {
                 <div className="partnersColumn">
                     <h3>Partenaires</h3>
                 </div>
-                <div 
+                <div
                     className="contactColumn"
                     style={{
                         textAlign: "start"
                     }}
                 >
                     <h3>Contact</h3>
-                    <ul style={{ listStyle:"none", alignItems:"start", padding:0, margin:0 }}>
+                    <ul style={{ listStyle: "none", alignItems: "start", padding: 0, margin: 0 }}>
                         <li>110 Clos de la Scierie, 74410 Saint-Jorioz</li>
                         <li>alexis.kueny@outlook.com</li>
                         <li>+33 757064497</li>
