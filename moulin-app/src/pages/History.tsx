@@ -3,10 +3,10 @@ import cadastresData from "../assets/cadastres.json";
 import scierieData from "../assets/scierie.json";
 import proprietairesData from "../assets/proprietaires.json";
 import { TimelinePlayer } from "../common/TimelinePlayer";
-import AutoCarousel from "../common/AutoCarousel";
 import Button from "@mui/material/Button";
 import Select from "@mui/material/Select";
 import { FormControl, InputLabel, MenuItem } from "@mui/material";
+import MapScierie from "../common/MapScierie";
 
 const History = () => {
     const [selectedDisplay, setSelectedDisplay] = useState<string>("cadastres");
@@ -20,7 +20,7 @@ const History = () => {
                 return <TimelinePlayer key="timeline" data={data} isPlaying={isPlaying} />;
             }
             case "scierie":
-                return <AutoCarousel key="carousel" data={scierieData} isPlaying={isPlaying} interval={3000}/>;
+                return <MapScierie/>
             default:
                 return null;
         }
