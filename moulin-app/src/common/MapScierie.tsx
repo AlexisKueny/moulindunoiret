@@ -28,11 +28,22 @@ const MapButton = ({ x, y }: MapButtonProps) => {
 };
 
 const InfoCard = ({position}: InfoCardProps) => {
+    const num_to_image = {
+        2:"public/images_scierie/2_StocBilles.jpg" 
+    }
+
     return (
         <Card>
             <CardContent>
                 <h2>Je suis une carte {position}</h2>
                 <p>Contenu de ma carte</p>
+                <img 
+                    src={num_to_image[2]}
+                    alt="text"
+                    height="30%"
+                    width="100%"
+                />
+                <p></p>
             </CardContent>
         </Card>
     )
@@ -41,7 +52,12 @@ const InfoCard = ({position}: InfoCardProps) => {
 const MapScierie = () => {
     return (
         <div
-            style={{display:"flex"}}
+            style={{
+                display:"flex",
+                gap:"20px",
+                marginLeft:"10px",
+                marginRight:"10px"
+            }}
         >
             <InfoCard position="left"/>
             <div style={{ marginBottom: "30px", display: "flex", justifyContent: "center", position: "relative" }}>
@@ -50,7 +66,7 @@ const MapScierie = () => {
                     alt="carte scierie"
                     style={{ display: "block", maxHeight: "700px", width: "auto", height: "auto" }}
                 />
-                <MapButton x={277} y={590} />
+                <MapButton x={230} y={590} />
             </div>
             <InfoCard position="right"/>
         </div>
