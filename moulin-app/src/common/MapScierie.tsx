@@ -51,6 +51,7 @@ const MapScierie = () => {
                     style={{ display: "block", maxHeight: "700px", width: "auto", height: "auto" }}
                 />
                 <MapButton x={277} y={590} />
+                <MapButton x={250} y={611} />
             </div>
             <InfoCard position="right"/>
         </div>
