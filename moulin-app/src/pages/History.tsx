@@ -41,7 +41,7 @@ const History = () => {
                     >
                         <MenuItem value="cadastres">cadastres</MenuItem>
                         <MenuItem value="proprietaires">proprietaires</MenuItem>
-                        <MenuItem value="scierie">scierie</MenuItem>
+                        <MenuItem value="scierie">scierie BERGERET 1985</MenuItem>
                     </Select>
                 </FormControl>
             </div>
