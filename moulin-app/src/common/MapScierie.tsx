@@ -29,7 +29,8 @@ const MapButton = ({ x, y }: MapButtonProps) => {
 
 const InfoCard = ({position}: InfoCardProps) => {
     const num_to_image = {
-        2:"/images_scierie/2_StocBilles.jpg" 
+        2:"./images_scierie/2_StocBilles.jpg" ,
+        3:"./images_scierie/3_StocBilles.jpg"
     }
 
     return (
@@ -38,7 +39,7 @@ const InfoCard = ({position}: InfoCardProps) => {
                 <h2>Je suis une carte {position}</h2>
                 <p>Contenu de ma carte</p>
                 <img 
-                    src={num_to_image[2]}
+                    src={num_to_image[3]}
                     alt="text"
                     height="30%"
                     width="100%"
