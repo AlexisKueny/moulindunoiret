@@ -115,7 +115,7 @@ const Work = () => {
                     >
                         <MenuItem value="W1">Les architectes du moulin</MenuItem>
                         <MenuItem value="W2">Premier Label 2005</MenuItem>
-                        <MenuItem value="W3">Période 2008-2015</MenuItem>
+                        <MenuItem value="W3">Période 2010-2015</MenuItem>
                         <MenuItem value="W4">Deuxieme Label 2015</MenuItem>
                         <MenuItem value="W5">Troisime Label 2022</MenuItem>
                     </Select>
