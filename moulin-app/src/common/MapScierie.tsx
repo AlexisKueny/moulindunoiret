@@ -18,8 +18,8 @@ const MapButton = ({ x, y }: MapButtonProps) => {
         <IconButton
             sx={{
                 position: "absolute",
-                top: `${y}px`,
-                left: `${x}px`,
+                top: `${y}%`,
+                left: `${x}%`,
             }}
         >
             <AddCircleOutlineRoundedIcon />
@@ -66,7 +66,7 @@ const MapScierie = () => {
                     alt="carte scierie"
                     style={{ display: "block", maxHeight: "700px", width: "auto", height: "auto" }}
                 />
-                <MapButton x={230} y={590} />
+                <MapButton x={33} y={95} />
             </div>
             <InfoCard position="right"/>
         </div>
