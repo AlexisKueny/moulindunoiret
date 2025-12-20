@@ -18,8 +18,8 @@ const MapButton = ({ x, y }: MapButtonProps) => {
         <IconButton
             sx={{
                 position: "absolute",
-                top: `${y}px`,
-                left: `${x}px`,
+                top: `${y}%`,
+                left: `${x}%`,
             }}
         >
             <AddCircleOutlineRoundedIcon />

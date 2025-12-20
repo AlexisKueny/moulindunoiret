@@ -1,6 +1,5 @@
 import { useState } from "react";
 import cadastresData from "../assets/cadastres.json";
-import scierieData from "../assets/scierie.json";
 import proprietairesData from "../assets/proprietaires.json";
 import { TimelinePlayer } from "../common/TimelinePlayer";
 import Button from "@mui/material/Button";
