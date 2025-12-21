@@ -1,7 +1,7 @@
 {
   "title": {
     "media": {
-      "url": "Essai3.png",
+      "url": "../Essai3.png",
       "caption": ""
     },
     "text": {
@@ -19,7 +19,7 @@
         "text": ""
       },
       "media": {
-        "url": "images_H1/P1.jpg",
+        "url": "../images_H1/P1.jpg",
         "caption": ""
       }
     },
@@ -32,7 +32,7 @@
         "text": ""
       },
       "media": {
-        "url": "images_H1/P2.jpg",
+        "url": "../images_H1/P2.jpg",
         "caption": "Détail"
       }
     },
@@ -45,7 +45,7 @@
         "text": ""
       },
       "media": {
-        "url": "images_H1/P3.jpg",
+        "url": "../images_H1/P3.jpg",
         "caption": "Détail"
       }
     },
@@ -58,7 +58,7 @@
         "text": ""
       },
       "media": {
-        "url": "images_H1/P4.jpg",
+        "url": "../images_H1/P4.jpg",
         "caption": ""
       }
     }

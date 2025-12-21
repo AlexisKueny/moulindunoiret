@@ -1,7 +1,7 @@
 {
   "title": {
     "media": {
-      "url": "Essai3.png",
+      "url": "../Essai3.png",
       "caption": ""
     },
     "text": {
@@ -19,7 +19,7 @@
         "text": ""
       },
       "media": {
-        "url": "images_H2/MapSard-0.jpg",
+        "url": "../images_H2/MapSard-0.jpg",
         "caption": ""
       }
     },
@@ -32,7 +32,7 @@
         "text": ""
       },
       "media": {
-        "url": "images_H2/MapSard-3.jpg",
+        "url": "../images_H2/MapSard-3.jpg",
         "caption": ""
       }
     },
@@ -41,7 +41,7 @@
         "year": 1866
       },
       "media": {
-        "url": "images_H2/M4_Cadastre.jpg",
+        "url": "../images_H2/M4_Cadastre.jpg",
         "caption": ""
       },
       "text": {
@@ -54,7 +54,7 @@
         "year": 1867
       },
       "media": {
-        "url": "images_H2/Cadastre1866.jpg",
+        "url": "../images_H2/Cadastre1866.jpg",
         "caption": ""
       },
       "text": {
@@ -67,7 +67,7 @@
         "year": 2025
       },
       "media": {
-        "url": "images_H2/Cadastre2004.jpg",
+        "url": "../images_H2/Cadastre2004.jpg",
         "caption": ""
       },
       "text": {
@@ -80,7 +80,7 @@
         "year": 2025
       },
       "media": {
-        "url": "images_H2/Cadastre2025.jpg",
+        "url": "../images_H2/Cadastre2025.jpg",
         "caption": ""
       },
       "text": {

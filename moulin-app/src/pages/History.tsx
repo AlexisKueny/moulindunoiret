@@ -1,6 +1,6 @@
 import { useState } from "react";
-import cadastresData from "../assets/cadastres.json";
-import proprietairesData from "../assets/proprietaires.json";
+import cadastresData from "../assets/H2_cadastres.json";
+import proprietairesData from "../assets/H1_proprietaires.json";
 import { TimelinePlayer } from "../common/TimelinePlayer";
 import Button from "@mui/material/Button";
 import Select from "@mui/material/Select";
@@ -13,9 +13,12 @@ const History = () => {
 
     const getDisplay = () => {
         switch (selectedDisplay) {
-            case "cadastres":
+            case "cadastres": {
+                const data = selectedDisplay === "cadastres" ? cadastresData : cadastresData;
+                return <TimelinePlayer key="timeline" data={data} isPlaying={isPlaying} />;
+            }
             case "proprietaires": {
-                const data = selectedDisplay === "cadastres" ? cadastresData : proprietairesData;
+                const data = selectedDisplay === "proprietaires" ? proprietairesData : proprietairesData;
                 return <TimelinePlayer key="timeline" data={data} isPlaying={isPlaying} />;
             }
             case "scierie":
