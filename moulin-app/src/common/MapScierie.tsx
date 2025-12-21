@@ -3,19 +3,24 @@ import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRou
 import { IconButton } from "@mui/material";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import { useState } from "react";
 
 interface MapButtonProps {
     x: number;
     y: number;
+    imagePath: string;
+    onClick: (imagePath: string) => void;
 }
 
 interface InfoCardProps {
-    position: string;
+    imagePath: string;
 }
 
-const MapButton = ({ x, y }: MapButtonProps) => {
+
+const MapButton = ({ x, y, imagePath, onClick }: MapButtonProps) => {
     return (
         <IconButton
+            onClick={() => onClick(imagePath)}
             sx={{
                 position: "absolute",
                 top: `${y}%`,
@@ -28,23 +33,20 @@ const MapButton = ({ x, y }: MapButtonProps) => {
     );
 };
 
-const InfoCard = ({position}: InfoCardProps) => {
-    const num_to_image = {
-        2:"../images_H3/2_StocBilles.jpg" ,
-        3:"../images_H3/3_StocBilles.jpg"
-    }
-
+const InfoCard = ({imagePath}: InfoCardProps) => {
     return (
         <Card>
             <CardContent>
-                <h2>Visite de la scierie BERGERET 1985 {position}</h2>
+                <h2>Visite de la scierie BERGERET 1985</h2>
                 <p>Stoc de billes</p>
-                <img 
-                    src={num_to_image[3]}
-                    alt="text"
-                    height="30%"
-                    width="100%"
-                />
+                {imagePath && (
+                    <img 
+                        src={imagePath}
+                        alt="text"
+                        height="30%"
+                        width="100%"
+                    />
+                )}
                 <p></p>
             </CardContent>
         </Card>
@@ -52,6 +54,8 @@ const InfoCard = ({position}: InfoCardProps) => {
 }
 
 const MapScierie = () => {
+    const [selectedImage, setSelectedImage] = useState("")
+
     return (
         <div
             style={{
@@ -61,7 +65,7 @@ const MapScierie = () => {
                 marginRight:"10px"
             }}
         >
-            <InfoCard position="1985"/>
+            <InfoCard imagePath={selectedImage}/>
             <div style={{ marginBottom: "30px", display: "flex", justifyContent: "center" }}>
                 <div>
                     <div style={{ position: "relative", display: "inline-block" }}>
@@ -70,9 +74,9 @@ const MapScierie = () => {
                             alt="carte scierie"
                             style={{ display: "block", maxHeight: "600px", width: "auto", height: "auto" }}
                         />
-                        <MapButton x={0} y={0} />
-                        <MapButton x={50} y={50} />
-                        <MapButton x={100} y={100} />
+                        <MapButton x={0} y={0} imagePath="../images_H1/P1.jpg" onClick={setSelectedImage}/>
+                        <MapButton x={50} y={50} imagePath="../images_H2/P2.jpg" onClick={setSelectedImage}/>
+                        <MapButton x={100} y={100} imagePath="../images_H3/P3.jpg" onClick={setSelectedImage}/>
                     </div>
                 </div>
             </div>
