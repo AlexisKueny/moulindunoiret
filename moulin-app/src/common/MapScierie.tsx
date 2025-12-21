@@ -37,7 +37,7 @@ const InfoCard = ({position}: InfoCardProps) => {
     return (
         <Card>
             <CardContent>
-                <h2>Visite de la scierie BERGERET {position}</h2>
+                <h2>Visite de la scierie BERGERET 1985 {position}</h2>
                 <p>Stoc de billes</p>
                 <img 
                     src={num_to_image[3]}
