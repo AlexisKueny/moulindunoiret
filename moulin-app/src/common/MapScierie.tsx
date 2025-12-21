@@ -36,7 +36,7 @@ const InfoCard = ({position}: InfoCardProps) => {
     return (
         <Card>
             <CardContent>
-                <h2>Visite de la scierie BERGERET {position}</h2>
+                <h2>Visite de la scierie BERGERET 1985 {position}</h2>
                 <p>Stoc de billes</p>
                 <img 
                     src={num_to_image[3]}
@@ -60,7 +60,7 @@ const MapScierie = () => {
                 marginRight:"10px"
             }}
         >
-            <InfoCard position="1985"/>
+            <InfoCard position=""/>
             <div style={{ marginBottom: "30px", display: "flex", justifyContent: "center", position: "relative" }}>
                 <img
                     src={ScierieMap}
