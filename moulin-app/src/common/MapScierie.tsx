@@ -20,6 +20,7 @@ const MapButton = ({ x, y }: MapButtonProps) => {
                 position: "absolute",
                 top: `${y}%`,
                 left: `${x}%`,
+                transform: "translate(-50%, -50%)",
             }}
         >
             <AddCircleOutlineRoundedIcon />
@@ -61,32 +62,19 @@ const MapScierie = () => {
             }}
         >
             <InfoCard position="1985"/>
-            <div style={{ marginBottom: "30px", display: "flex", justifyContent: "center", position: "relative" }}>
-                <img
-                    src={ScierieMap}
-                    alt="carte scierie"
-                    style={{ display: "block", maxHeight: "700px", width: "auto", height: "auto" }}
-                />
-
-                <MapButton x={501} y={-9} />
-                <MapButton x={278} y={588} />
-                <MapButton x={620} y={194} />
-                <MapButton x={597} y={273} />
-                <MapButton x={620} y={271} />
-                <MapButton x={565} y={280} />
-                <MapButton x={456} y={271} />
-                <MapButton x={501} y={289} />
-                <MapButton x={429} y={307} />
-                <MapButton x={333} y={325} />
-                <MapButton x={337} y={289} />
-                <MapButton x={369} y={199} />
-                <MapButton x={365} y={122} />
-                <MapButton x={720} y={27} />
-                <MapButton x={592} y={380} />
-                <MapButton x={310} y={411} />
-                <MapButton x={401} y={371} />
-                <MapButton x={337} y={235} />
-
+            <div style={{ marginBottom: "30px", display: "flex", justifyContent: "center" }}>
+                <div>
+                    <div style={{ position: "relative", display: "inline-block" }}>
+                        <img
+                            src={ScierieMap}
+                            alt="carte scierie"
+                            style={{ display: "block", maxHeight: "600px", width: "auto", height: "auto" }}
+                        />
+                        <MapButton x={0} y={0} />
+                        <MapButton x={50} y={50} />
+                        <MapButton x={100} y={100} />
+                    </div>
+                </div>
             </div>
             
         </div>
