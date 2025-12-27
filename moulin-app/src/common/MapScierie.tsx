@@ -79,9 +79,8 @@ const MapScierie = () => {
                             alt="carte scierie"
                             style={{ display: "block", maxHeight: "600px", width: "auto", height: "auto" }}
                         />
-                        <MapButton x={0} y={0} imagePath="../images_H1/P1.jpg" pointDescription="Stock de billes" onClick={handlePointClick}/>
-                        <MapButton x={50} y={50} imagePath="../images_H2/P2.jpg" pointDescription="Zone de découpe" onClick={handlePointClick}/>
-                        <MapButton x={100} y={100} imagePath="../images_H3/P3.jpg" pointDescription="Aire de stockage" onClick={handlePointClick}/>
+                        <MapButton x={	32.05	} y={	57.66	} imagePath="../images_H3/		1_NW.jpg	 "onClick={setSelectedImage}/>
+                        <MapButton x={	43.59	} y={	41.61	} imagePath="../images_H3/		22_LocalSciure.jpg	 "onClick={setSelectedImage}/>	
                     </div>
                 </div>
             </div>
