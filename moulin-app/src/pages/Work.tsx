@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import Select, { type SelectChangeEvent } from "@mui/material/Select";
 import { FormControl, InputLabel, MenuItem } from "@mui/material";
 import { Carousel } from 'antd';
+import { Height } from "@mui/icons-material";
 
 declare const TL: { Timeline: new (element: Element | null, data: object, params: object) => Timeline };
 
@@ -90,9 +91,14 @@ const Work = () => {
             </div>
 
             <div style={{ width: "80%", maxWidth: "1200px", marginBottom: "20px" }}>
-                <Carousel arrows autoplay autoplaySpeed={5000}>
+                <Carousel arrows autoplay autoplaySpeed={5000}
+                style={{height:"500px"}}>
                     <div>
-                        <h3 style={contentStyle}>1</h3>
+                        <img
+                          alt="imh"
+                          src="images_W1/01Luzzi.jpg"
+                          style={{ width: "100%", height: "500px", objectFit: "contain" }}
+                        />
                     </div>
                     <div>
                         <h3 style={contentStyle}>2</h3>
