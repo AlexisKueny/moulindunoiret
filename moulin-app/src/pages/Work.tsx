@@ -96,12 +96,91 @@ const Work = () => {
                     <div>
                         <img
                           alt="imh"
-                          src="images_W1/01Luzzi.jpg"
-                          style={{ width: "100%", height: "500px", objectFit: "contain" }}
+                          src="../images_W1/01Luzzi.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
                         />
                     </div>
                     <div>
-                        <h3 style={contentStyle}>2</h3>
+                        <img
+                          alt="imh"
+                          src="../images_W1/02Luzzi.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                          />
+                    </div>
+                    <div>
+                        <img
+                          alt="imh"
+                          src="../images_W1/03Luzzi.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                          />
+                    </div>
+                    <div>
+                        <img
+                          alt="imh"
+                          src="../images_W1/04Luzzi.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                          />
+                    </div>
+                    <div>
+                        <img
+                          alt="imh"
+                          src="../images_W1/05Luzzi.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                          />
+                    </div>
+                    <div>
+                        <img
+                          alt="imh"
+                          src="../images_W1/06Dujourdy.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                          />
+                    </div>
+                    <div>
+                        <img
+                          alt="imh"
+                          src="../images_W1/07Dujourdy.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                          />
+                    </div>
+                    <div>
+                        <img
+                          alt="imh"
+                          src="../images_W1/08Dujourdy.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                          />
+                    </div>
+                    <div>
+                        <img
+                          alt="imh"
+                          src="../images_W1/09Dujourdy.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                          />
+                    </div><div>
+                        <img
+                          alt="imh"
+                          src="../images_W1/10Dujourdy.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                          />
+                    </div><div>
+                        <img
+                          alt="imh"
+                          src="../images_W1/11Dujourdy.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                          />
+                    </div>
+                    <div>
+                        <img
+                          alt="imh"
+                          src="../images_W1/12Dujourdy.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                          />
+                    </div>
+                    <div>
+                        <img
+                          alt="imh"
+                          src="../images_W1/13Dujourdy.jpg"
+                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                          />
                     </div>
                     <div>
                         <h3 style={contentStyle}>3</h3>
