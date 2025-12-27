@@ -7,6 +7,8 @@ import W5Data from "../assets/W5_TroisiemLabel.json";
 import Button from "@mui/material/Button";
 import Select, { type SelectChangeEvent } from "@mui/material/Select";
 import { FormControl, InputLabel, MenuItem } from "@mui/material";
+import { Carousel } from 'antd';
+import { Height } from "@mui/icons-material";
 
 declare const TL: { Timeline: new (element: Element | null, data: object, params: object) => Timeline };
 
@@ -39,55 +41,21 @@ const Work = () => {
         }
     };
 
-    // Only create timeline when selectedTimeline changes
-    useEffect(() => {
-        const timelineData = getTimelineData(selectedTimeline);
-        const timeline = new TL.Timeline(timelineRef.current, timelineData, {
-            scale_factor: 0.5,
-        });
-        timelineInstanceRef.current = timeline;
-        countRef.current = 0;
-    }, [selectedTimeline]);
-
-    // Only handle autoplay when isPlaying changes
-    useEffect(() => {
-        if (!timelineInstanceRef.current || !isPlaying) return;
-
-        const timeline = timelineInstanceRef.current;
-        const timelineData = getTimelineData(selectedTimeline);
-        const length = (timelineData as { events: unknown[] }).events.length;
-
-        const loadNextSlide = () => {
-            try {
-                if (countRef.current < length) {
-                    timeline.goToNext();
-                    countRef.current++;
-                    console.log("COUNT", countRef.current);
-                }
-                else {
-                    timeline.goToStart();
-                    countRef.current = 0;
-                }
-            } catch (err) {
-                if (err instanceof TypeError) {
-                    console.log(err.message);
-                    if (err.message === "Cannot read property 'unique_id' of undefined") {
-                        timeline.goToStart();
-                    }
-                }
-            }
-        };
-
-        const intervalId = setInterval(loadNextSlide, 3000);
-        return () => clearInterval(intervalId);
-    }, [isPlaying, selectedTimeline]);
-
     const handleChange = (event: SelectChangeEvent) => {
         setSelectedTimeline(event.target.value);
     };
 
     const toggleAutoplay = () => {
         setIsPlaying(!isPlaying);
+    };
+
+    const contentStyle: React.CSSProperties = {
+        margin: 0,
+        height: '400px',
+        color: '#fff',
+        lineHeight: '400px',
+        textAlign: 'center',
+        background: '#364d79',
     };
 
     return (
@@ -105,7 +73,7 @@ const Work = () => {
                     {isPlaying ? "Pause" : "Play"}
                 </Button>
                 <FormControl sx={{ width: "220px" }} size="small">
-                    <InputLabel id="demo-simple-select-label" sx={{color:"black"}}>Choisir une chronologie</InputLabel>
+                    <InputLabel id="demo-simple-select-label" sx={{ color: "black" }}>Choisir une chronologie</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
@@ -122,8 +90,26 @@ const Work = () => {
                 </FormControl>
             </div>
 
-            <div style={{ display: "flex", justifyContent: "center", width: "100%",  marginBottom: 50 }}>
-                <div ref={timelineRef} id="timeline-embed" style={{ height: "700px", width: "100%"}}></div>
+            <div style={{ width: "80%", maxWidth: "1200px", marginBottom: "20px" }}>
+                <Carousel arrows autoplay autoplaySpeed={5000}
+                style={{height:"500px"}}>
+                    <div>
+                        <img
+                          alt="imh"
+                          src="images_W1/01Luzzi.jpg"
+                          style={{ width: "100%", height: "500px", objectFit: "contain" }}
+                        />
+                    </div>
+                    <div>
+                        <h3 style={contentStyle}>2</h3>
+                    </div>
+                    <div>
+                        <h3 style={contentStyle}>3</h3>
+                    </div>
+                    <div>
+                        <h3 style={contentStyle}>4</h3>
+                    </div>
+                </Carousel>
             </div>
         </div>
     );
