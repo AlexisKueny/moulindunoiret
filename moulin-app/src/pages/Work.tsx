@@ -73,11 +73,11 @@ const Work = () => {
                     {isPlaying ? "Pause" : "Play"}
                 </Button>
                 <FormControl sx={{ width: "220px" }} size="small">
-                    <InputLabel id="demo-simple-select-label" sx={{ color: "black" }}>Choisir une chronologie</InputLabel>
+                    <InputLabel id="demo-simple-select-label" sx={{ color: "black" }}>Choisir un thème</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
-                        label="Choisir une chronologie"
+                        label="Choisir un thème"
                         value={selectedTimeline}
                         onChange={handleChange}
                     >
