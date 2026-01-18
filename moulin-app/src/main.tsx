@@ -8,6 +8,7 @@ import App from './App.tsx'
 import { blueGrey, grey } from '@mui/material/colors'
 import Work from './pages/Work.tsx'
 import History from './pages/History.tsx'
+import WorkInProgress from './pages/WorkInProgress.tsx'
 
 const theme = createTheme({
   palette: {
@@ -26,12 +27,8 @@ createRoot(document.getElementById('root')!).render(
         <BrowserRouter>
           <Routes>
             <Route element={<App />}>
-              <Route index element={<Home />} />
-              <Route path="historique" element={<History/>} />
-              <Route path="projet" element={<h1>Projet</h1>} />
-              <Route path="travaux" element={<Work/>} />
-              <Route path="newsletter" element={<h1>Newsletter</h1>} />
-              <Route path="*" element={<h1>Page non trouvée</h1>} />
+              <Route index element={<WorkInProgress />} />
+              <Route path="*" element={<WorkInProgress />} />
             </Route>
           </Routes>
         </BrowserRouter>
