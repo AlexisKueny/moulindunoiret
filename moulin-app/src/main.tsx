@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { HashRouter, Route, Routes } from 'react-router'
+import { BrowserRouter, Route, Routes } from 'react-router'
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import 'antd/dist/reset.css'
 import Home from './pages/Home.tsx'
@@ -23,7 +23,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <CssBaseline >
       <ThemeProvider theme={theme}>
-        <HashRouter>
+        <BrowserRouter basename={import.meta.env.DEV ? '/' : '/moulindunoiret/'}>
           <Routes>
             <Route element={<App />}>
               <Route index element={<Home />} />
@@ -34,7 +34,7 @@ createRoot(document.getElementById('root')!).render(
               <Route path="*" element={<h1>Page non trouvée</h1>} />
             </Route>
           </Routes>
-        </HashRouter>
+        </BrowserRouter>
       </ThemeProvider>
     </CssBaseline>
   </StrictMode>

@@ -1,5 +1,5 @@
 import { AppBar, Stack, Toolbar, useTheme } from "@mui/material";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import HistoryEduRoundedIcon from '@mui/icons-material/HistoryEduRounded';
 import ArchitectureRoundedIcon from '@mui/icons-material/ArchitectureRounded';
 import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
@@ -8,18 +8,25 @@ import NewspaperRoundedIcon from '@mui/icons-material/NewspaperRounded';
 
 const Header = () => {
   const theme = useTheme();
+  const location = useLocation();
 
-  const linkStyle = { textDecoration: "none", color: theme.palette.text.primary };
-  const stackStyle = { textDecoration: "underline" };
+  const NavLink = ({ to, icon: Icon, label }: { to: string; icon: SvgIconComponent; label: string }) => {
+    const isActive = location.pathname === to;
+    const linkStyle = { 
+      textDecoration: "none", 
+      color: isActive ? '#f44336' : theme.palette.text.primary 
+    };
+    const stackStyle = { textDecoration: "underline" };
 
-  const NavLink = ({ to, icon: Icon, label }: { to: string; icon: SvgIconComponent; label: string }) => (
-    <Link to={to} style={linkStyle}>
-      <Stack direction={"row"} alignItems={"center"} gap={0} sx={stackStyle}>
-        <Icon />
-        <h3 style={{ margin: 0 }}>{label}</h3>
-      </Stack>
-    </Link>
-  );
+    return (
+      <Link to={to} style={linkStyle}>
+        <Stack direction={"row"} alignItems={"center"} gap={0} sx={stackStyle}>
+          <Icon />
+          <h3 style={{ margin: 0 }}>{label}</h3>
+        </Stack>
+      </Link>
+    );
+  };
 
   return (
     <AppBar position="static" color="transparent" elevation={0} style={{ boxShadow: 'none', backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
