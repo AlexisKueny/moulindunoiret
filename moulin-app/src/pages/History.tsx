@@ -3,8 +3,7 @@ import cadastresData from "../assets/H2_cadastres.json";
 import proprietairesData from "../assets/H1_proprietaires.json";
 import { TimelinePlayer } from "../common/TimelinePlayer";
 import Button from "@mui/material/Button";
-import Select from "@mui/material/Select";
-import { FormControl, InputLabel, MenuItem } from "@mui/material";
+import { Box, Tab, Tabs } from "@mui/material";
 import MapScierie from "../common/MapScierie";
 
 const History = () => {
@@ -29,27 +28,70 @@ const History = () => {
     };
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
-            <div style={{ display: "flex", gap: 20, justifyContent: "center", alignItems: "center", marginBottom: 20 }}>
-                <Button variant="contained" onClick={() => setIsPlaying(!isPlaying)}>
+        <div style={{ 
+            display: "flex", 
+            flexDirection: "column", 
+            alignItems: "flex-start", 
+            width: "100%", 
+            paddingLeft: "48px", 
+            paddingRight: "48px", 
+            paddingBottom: "50px", 
+            minHeight: selectedDisplay ? "100vh" : "auto" 
+        }}>
+            <Box 
+                sx={{ 
+                    display: 'flex', 
+                    alignItems: 'center',
+                    gap: 2,
+                    marginBottom: 2
+                }}
+            >
+                <Tabs 
+                    value={selectedDisplay} 
+                    onChange={(_, newValue) => setSelectedDisplay(newValue)}
+                    textColor="inherit"
+                    sx={{ 
+                        borderBottom: 1,
+                        borderColor: 'divider',
+                        '& .MuiTab-root': { 
+                            color: 'rgba(0, 0, 0, 0.87)'
+                        }
+                    }}
+                >
+                    <Tab label="Cadastres" value="cadastres" />
+                    <Tab label="Propriétaires" value="proprietaires" />
+                    <Tab label="Scierie BERGERET 1985" value="scierie" />
+                </Tabs>
+            </Box>
+            <div style={{ 
+                display: "flex", 
+                justifyContent: "center", 
+                width: "100%", 
+                marginBottom: 20,
+                height: "550px"
+            }}>
+                <div style={{ width: "100%", maxWidth: "1400px", height: "100%" }}>
+                    {getDisplay()}
+                </div>
+            </div>
+            {selectedDisplay !== "scierie" && (
+                <Button 
+                    variant="contained" 
+                    size="large"
+                    onClick={() => setIsPlaying(!isPlaying)}
+                    sx={{ 
+                        width: '100%',
+                        maxWidth: '1400px',
+                        paddingY: 1.5,
+                        backgroundColor: isPlaying ? '#f44336' : '#4caf50',
+                        '&:hover': {
+                            backgroundColor: isPlaying ? '#d32f2f' : '#45a049'
+                        }
+                    }}
+                >
                     {isPlaying ? "Pause" : "Play"}
                 </Button>
-                <FormControl sx={{ width: "220px" }} size="small">
-                    <InputLabel sx={{ color: "black" }}>Choisir un thème</InputLabel>
-                    <Select
-                        label="Choisir un thème"
-                        value={selectedDisplay}
-                        onChange={(e) => setSelectedDisplay(e.target.value)}
-                    >
-                        <MenuItem value="cadastres">cadastres</MenuItem>
-                        <MenuItem value="proprietaires">proprietaires</MenuItem>
-                        <MenuItem value="scierie">scierie BERGERET 1985</MenuItem>
-                    </Select>
-                </FormControl>
-            </div>
-            <div style={{ display: "flex", justifyContent: "center", width: "100%", marginBottom: 50, height: "650px" }}>
-                {getDisplay()}
-            </div>
+            )}
         </div>
     );
 };

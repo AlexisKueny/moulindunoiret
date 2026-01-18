@@ -1,313 +1,99 @@
 {
-  "title": {
-    "media": {
-      "url": "H3/B5_NW.jpg",
-      "caption": ""
-    },
-    "text": {
-      "headline": "La scierie BERGERET -> 1991",
-      "body": ""
-    }
-  },
-  "events": [
+  "title": "La scierie BERGERET -> 1991",
+  "description": "",
+  "images": [
     {
-      "start_date": {
-        "year": 1
-      },
-      "text": {
-        "headline": "",
-        "text": "Article DL 1988?"
-      },
-      "media": {
-        "url": "images_scierie/1_Au fil de l'eau et... du bois.jpg",
-        "caption": ""
-      }
+      "path": "images_scierie/1_Au fil de l'eau et... du bois.jpg",
+      "description": "Article DL 1988?"
     },
     {
-      "start_date": {
-        "year": 2
-      },
-      "text": {
-        "headline": "",
-        "text": "Le stoc de billes"
-      },
-      "media": {
-        "url": "images_scierie/2_StocBilles.jpg",
-        "caption": ""
-      }
+      "path": "images_scierie/2_StocBilles.jpg",
+      "description": "Le stoc de billes"
     },
     {
-      "start_date": {
-        "year": 3
-      },
-      "media": {
-        "url": "images_scierie/3_StocBilles.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Le stoc de billes"
-      }
+      "path": "images_scierie/3_StocBilles.jpg",
+      "description": "Le stoc de billes"
     },
     {
-      "start_date": {
-        "year": 4
-      },
-      "media": {
-        "url": "images_scierie/4_Billonnage.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Le poste de billonnage"
-      }
+      "path": "images_scierie/4_Billonnage.jpg",
+      "description": "Le poste de billonnage"
     },
     {
-      "start_date": {
-        "year": 5
-      },
-      "media": {
-        "url": "images_scierie/5_ScieRennepont.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "La scie à laser Rennepont"
-      }
+      "path": "images_scierie/5_ScieRennepont.jpg",
+      "description": "La scie à laser Rennepont"
     },
     {
-      "start_date": {
-        "year": 6
-      },
-      "media": {
-        "url": "images_scierie/6_PostPilotScie.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Poste de pilotage"
-      }
+      "path": "images_scierie/6_PostPilotScie.jpg",
+      "description": "Poste de pilotage"
     },
     {
-      "start_date": {
-        "year": 7
-      },
-      "media": {
-        "url": "images_scierie/7_TapisRoulant.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Tapis roulant"
-      }
+      "path": "images_scierie/7_TapisRoulant.jpg",
+      "description": "Tapis roulant"
     },
     {
-      "start_date": {
-        "year": 8
-      },
-      "media": {
-        "url": "images_scierie/8_LaPropio.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "La propriétaire"
-      }
+      "path": "images_scierie/8_LaPropio.jpg",
+      "description": "La propriétaire"
     },
     {
-      "start_date": {
-        "year": 9
-      },
-      "media": {
-        "url": "images_scierie/9_TapisRoulant.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Tapis Roulant"
-      }
+      "path": "images_scierie/9_TapisRoulant.jpg",
+      "description": "Tapis Roulant"
     },
     {
-      "start_date": {
-        "year": 10
-      },
-      "media": {
-        "url": "images_scierie/10_ScieADelignier.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "La scie à déligner"
-      }
+      "path": "images_scierie/10_ScieADelignier.jpg",
+      "description": "La scie à déligner"
     },
     {
-      "start_date": {
-        "year": 11
-      },
-      "media": {
-        "url": "images_scierie/11_DosssesPapetterie.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Dossses pour la papetterie.jpg"
-      }
+      "path": "images_scierie/11_DosssesPapetterie.jpg",
+      "description": "Dossses pour la papetterie"
     },
     {
-      "start_date": {
-        "year": 12
-      },
-      "media": {
-        "url": "images_scierie/12_GrandePiece.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "2e Poste de délignage"
-      }
+      "path": "images_scierie/12_GrandePiece.jpg",
+      "description": "2e Poste de délignage"
     },
     {
-      "start_date": {
-        "year": 13
-      },
-      "media": {
-        "url": "images_scierie/13_WagonnetsVersQuaiChargement.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Wagonnets vers quai de chargement"
-      }
+      "path": "images_scierie/13_WagonnetsVersQuaiChargement.jpg",
+      "description": "Wagonnets vers quai de chargement"
     },
     {
-      "start_date": {
-        "year": 14
-      },
-      "media": {
-        "url": "images_scierie/14_GrueScieBatt.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "La grue de la scie battante"
-      }
+      "path": "images_scierie/14_GrueScieBatt.jpg",
+      "description": "La grue de la scie battante"
     },
     {
-      "start_date": {
-        "year": 15
-      },
-      "media": {
-        "url": "images_scierie/15_Brouette.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "La brouette du propriétaire"
-      }
+      "path": "images_scierie/15_Brouette.jpg",
+      "description": "La brouette du propriétaire"
     },
     {
-      "start_date": {
-        "year": 16
-      },
-      "media": {
-        "url": "images_scierie/16_QuaiChargement.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Quai de chargement"
-      }
+      "path": "images_scierie/16_QuaiChargement.jpg",
+      "description": "Quai de chargement"
     },
     {
-      "start_date": {
-        "year": 17
-      },
-      "media": {
-        "url": "images_scierie/17_QuaiChargement.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Pont roulant"
-      }
+      "path": "images_scierie/17_QuaiChargement.jpg",
+      "description": "Pont roulant"
     },
     {
-      "start_date": {
-        "year": 18
-      },
-      "media": {
-        "url": "images_scierie/18_QuaiChargement.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Quai de chargement"
-      }
+      "path": "images_scierie/18_QuaiChargement.jpg",
+      "description": "Quai de chargement"
     },
     {
-      "start_date": {
-        "year": 19
-      },
-      "media": {
-        "url": "images_scierie/19_TransfoSW.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Transformateur et salle d'affutage"
-      }
+      "path": "images_scierie/19_TransfoSW.jpg",
+      "description": "Transformateur et salle d'affutage"
     },
     {
-      "start_date": {
-        "year": 20
-      },
-      "media": {
-        "url": "images_scierie/20_SW.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Pont roulant"
-      }
+      "path": "images_scierie/20_SW.jpg",
+      "description": "Pont roulant"
     },
     {
-      "start_date": {
-        "year": 21
-      },
-      "media": {
-        "url": "images_scierie/21_HanguarCamions.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Le hangar à camions"
-      }
+      "path": "images_scierie/21_HanguarCamions.jpg",
+      "description": "Le hangar à camions"
     },
     {
-      "start_date": {
-        "year": 22
-      },
-      "media": {
-        "url": "images_scierie/22_LocalSciure.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "Le silot  sciure"
-      }
+      "path": "images_scierie/22_LocalSciure.jpg",
+      "description": "Le silot à sciure"
     },
     {
-      "start_date": {
-        "year": 23
-      },
-      "media": {
-        "url": "images_scierie/23_Demolition.jpg",
-        "caption": ""
-      },
-      "text": {
-        "headline": "",
-        "text": "1995 La scie est partie!"
-      }
+      "path": "images_scierie/23_Demolition.jpg",
+      "description": "1995 La scie est partie!"
     }
   ]
 }
+

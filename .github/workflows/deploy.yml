@@ -34,18 +34,20 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: lts/*
-          cache: 'npm'
+          cache: 'pnpm'
           # Look for the lock file inside the `moulin-app` subfolder where package.json lives
-          cache-dependency-path: moulin-app/package-lock.json
+          cache-dependency-path: moulin-app/pnpm-lock.yaml
+      - name: Install pnpm
+        run: npm install -g pnpm
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
         # install inside the subproject
         working-directory: moulin-app
       - name: Build
-        run: npm run build
+        run: pnpm run build
         working-directory: moulin-app
       - name: Lint
-        run: npm run lint
+        run: pnpm run lint
         working-directory: moulin-app
       - name: Setup Pages
         uses: actions/configure-pages@v5

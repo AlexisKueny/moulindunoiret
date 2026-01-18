@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import W1Data from "../assets/W1_Architectes.json";
 import W2Data from "../assets/W2_PremierLabel.json";
 import W3Data from "../assets/W3_P20082015.json";
@@ -8,23 +8,18 @@ import Button from "@mui/material/Button";
 import Select, { type SelectChangeEvent } from "@mui/material/Select";
 import { FormControl, InputLabel, MenuItem } from "@mui/material";
 import { Carousel } from 'antd';
-import { Height } from "@mui/icons-material";
 
-declare const TL: { Timeline: new (element: Element | null, data: object, params: object) => Timeline };
-
-declare interface Timeline {
-    goToNext: () => void;
-    goToStart: () => void;
+interface WorkData {
+    title: string;
+    description: string;
+    images: string[];
 }
 
 const Work = () => {
-    const timelineRef = useRef<HTMLDivElement | null>(null);
-    const timelineInstanceRef = useRef<Timeline | null>(null);
-    const countRef = useRef<number>(0);
     const [selectedTimeline, setSelectedTimeline] = useState<string>("W1");
-    const [isPlaying, setIsPlaying] = useState<boolean>(false);
+    const [autoplay, setAutoplay] = useState<boolean>(false);
 
-    const getTimelineData = (timeline: string) => {
+    const getTimelineData = (timeline: string): WorkData => {
         switch (timeline) {
             case "W1":
                 return W1Data;
@@ -46,17 +41,10 @@ const Work = () => {
     };
 
     const toggleAutoplay = () => {
-        setIsPlaying(!isPlaying);
+        setAutoplay(!autoplay);
     };
 
-    const contentStyle: React.CSSProperties = {
-        margin: 0,
-        height: '400px',
-        color: '#fff',
-        lineHeight: '400px',
-        textAlign: 'center',
-        background: '#364d79',
-    };
+    const currentData = getTimelineData(selectedTimeline);
 
     return (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
@@ -70,7 +58,7 @@ const Work = () => {
                 }}
             >
                 <Button variant="contained" onClick={toggleAutoplay}>
-                    {isPlaying ? "Pause" : "Play"}
+                    {autoplay ? "Pause" : "Play"}
                 </Button>
                 <FormControl sx={{ width: "220px" }} size="small">
                     <InputLabel id="demo-simple-select-label" sx={{ color: "black" }}>Choisir un thème</InputLabel>
@@ -91,103 +79,26 @@ const Work = () => {
             </div>
 
             <div style={{ width: "80%", maxWidth: "1200px", marginBottom: "20px" }}>
-                <Carousel arrows autoplay autoplaySpeed={5000}
-                style={{height:"500px"}}>
-                    <div>
-                        <img
-                          alt="img"
-                          src="../images_W1/01Luzzi.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                        />
-                    </div>
-                    <div>
-                        <img
-                          alt="imh"
-                          src="../images_W1/02Luzzi.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                          />
-                    </div>
-                    <div>
-                        <img
-                          alt="imh"
-                          src="../images_W1/03Luzzi.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                          />
-                    </div>
-                    <div>
-                        <img
-                          alt="imh"
-                          src="../images_W1/04Luzzi.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                          />
-                    </div>
-                    <div>
-                        <img
-                          alt="imh"
-                          src="../images_W1/05Luzzi.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                          />
-                    </div>
-                    <div>
-                        <img
-                          alt="imh"
-                          src="../images_W1/06Dujourdy.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                          />
-                    </div>
-                    <div>
-                        <img
-                          alt="imh"
-                          src="../images_W1/07Dujourdy.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                          />
-                    </div>
-                    <div>
-                        <img
-                          alt="imh"
-                          src="../images_W1/08Dujourdy.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                          />
-                    </div>
-                    <div>
-                        <img
-                          alt="imh"
-                          src="../images_W1/09Dujourdy.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                          />
-                    </div><div>
-                        <img
-                          alt="imh"
-                          src="../images_W1/10Dujourdy.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                          />
-                    </div><div>
-                        <img
-                          alt="imh"
-                          src="../images_W1/11Dujourdy.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                          />
-                    </div>
-                    <div>
-                        <img
-                          alt="imh"
-                          src="../images_W1/12Dujourdy.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                          />
-                    </div>
-                    <div>
-                        <img
-                          alt="imh"
-                          src="../images_W1/13Dujourdy.jpg"
-                          style={{ width: "100%", height: "450px", objectFit: "contain" }}
-                          />
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>3</h3>
-                    </div>
-                    <div>
-                        <h3 style={contentStyle}>4</h3>
-                    </div>
+                <h2 style={{ textAlign: "center", marginBottom: "10px" }}>{currentData.title}</h2>
+                {currentData.description && (
+                    <p style={{ textAlign: "center", marginBottom: "20px" }}>{currentData.description}</p>
+                )}
+                <Carousel 
+                    arrows 
+                    autoplay={autoplay} 
+                    autoplaySpeed={5000}
+                    style={{ height: "500px" }}
+                    key={selectedTimeline}
+                >
+                    {currentData.images.map((imagePath, index) => (
+                        <div key={index}>
+                            <img
+                                alt={`${currentData.title} - ${index + 1}`}
+                                src={imagePath}
+                                style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                            />
+                        </div>
+                    ))}
                 </Carousel>
             </div>
         </div>

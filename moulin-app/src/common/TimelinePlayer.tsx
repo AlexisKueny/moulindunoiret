@@ -52,8 +52,8 @@ export const TimelinePlayer = ({ data, isPlaying}: TimelinePlayerProps) => {
     }, [isPlaying]);
 
     return (
-        <div style={{ display: "flex", justifyContent: "center", width: "100%", marginBottom: 50 }}>
-            <div ref={timelineRef} id="timeline-embed" style={{ height: "650px", width: "100%" }} />
+        <div style={{ display: "flex", justifyContent: "center", width: "100%", height: "100%" }}>
+            <div ref={timelineRef} id="timeline-embed" style={{ height: "100%", width: "100%" }} />
         </div>
     );
 };
