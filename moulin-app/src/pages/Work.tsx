@@ -95,7 +95,7 @@ const Work = () => {
                 style={{height:"500px"}}>
                     <div>
                         <img
-                          alt="imh"
+                          alt="img"
                           src="../images_W1/01Luzzi.jpg"
                           style={{ width: "100%", height: "450px", objectFit: "contain" }}
                         />
