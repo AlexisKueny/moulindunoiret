@@ -31,7 +31,7 @@ createRoot(document.getElementById('root')!).render(
             </Routes>
           ) : (
             <Routes>
-              <Route element={<App />}>
+              <Route element={<App />} >
                 <Route index element={<Home />} />
                 <Route path="historique" element={<History/>} />
                 <Route path="projet" element={<h1>Projet</h1>} />
