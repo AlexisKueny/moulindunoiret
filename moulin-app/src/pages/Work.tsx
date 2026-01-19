@@ -1,7 +1,7 @@
 import { useState } from "react";
 import W1Data from "../assets/W1_Architectes.json";
-import W2Data from "../assets/W2_PremierLabel.json";
-import W3Data from "../assets/W3_P20082015.json";
+import W2Data from "../assets/W2_Moulin2001.json";
+import W3Data from "../assets/W3_PremierLabel.json";
 import W4Data from "../assets/W4_DeuxiemeLabel.json";
 import W5Data from "../assets/W5_TroisiemLabel.json";
 import Button from "@mui/material/Button";
@@ -70,8 +70,8 @@ const Work = () => {
                         onChange={handleChange}
                     >
                         <MenuItem value="W1">Les architectes du moulin</MenuItem>
-                        <MenuItem value="W2">Premier Label 2005</MenuItem>
-                        <MenuItem value="W3">Période 2010-2015</MenuItem>
+                        <MenuItem value="W2">Moulin en 2001</MenuItem>
+                        <MenuItem value="W3">Premier Label 2005</MenuItem>
                         <MenuItem value="W4">Deuxieme Label 2015</MenuItem>
                         <MenuItem value="W5">Troisime Label 2022</MenuItem>
                     </Select>
