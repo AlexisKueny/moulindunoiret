@@ -6,11 +6,7 @@ import W4Data from "../assets/W4_DeuxiemeLabel.json";
 import W5Data from "../assets/W5_TroisiemLabel.json";
 import Button from "@mui/material/Button";
 import { Box, Tab, Tabs } from "@mui/material";
-import Select, { type SelectChangeEvent } from "@mui/material/Select";
-import { FormControl, InputLabel, MenuItem } from "@mui/material";
 import { Carousel } from 'antd';
-
-import { TimelinePlayer } from "../common/TimelinePlayer";
 
 interface WorkData {
     title: string;
@@ -19,28 +15,10 @@ interface WorkData {
 }
 
 const Work = () => {
-    const [selectedDisplay, setSelectedDisplay] = useState<string>("cadastres");
-    const [selectedTimeline, setSelectedTimeline] = useState<string>("W1");
+    const [selectedDisplay, setSelectedDisplay] = useState<string>("W1");
     const [autoplay, setAutoplay] = useState<boolean>(false);
-    const [isPlaying, setIsPlaying] = useState<boolean>(false);
-
-    const getDisplay = () => {
-        switch (selectedDisplay) {
-            case "Les architectes du moulin": {
-                const data = selectedDisplay === "Les architectes du moulin" ? W1Data : W1Data;
-                return <TimelinePlayer key="timeline" data={data} isPlaying={isPlaying} />;
-            }
-            case "Moulin en 2001": {
-                const data = selectedDisplay === "Moulin en 2001" ? W2Data : W2Data;
-                return <TimelinePlayer key="timeline" data={data} isPlaying={isPlaying} />;
-            }
-            default:
-                return null;
-        }
-    };
-    
-    const getTimelineData = (timeline: string): WorkData => {
-        switch (timeline) {
+    const getDisplay = (displ: string): WorkData => {
+        switch (displ) {
             case "W1":
                 return W1Data;
             case "W2":
@@ -55,19 +33,18 @@ const Work = () => {
                 return W1Data;
         }
     };
-
-    const handleChange = (event: SelectChangeEvent) => {
-        setSelectedTimeline(event.target.value);
-    };
-
+    const currentData = getDisplay(selectedDisplay);
     const toggleAutoplay = () => {
         setAutoplay(!autoplay);
     };
 
-    const currentData = getTimelineData(selectedTimeline);
-
     return (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
+        <div style={{ 
+            display: "flex", 
+            flexDirection: "column", 
+            alignItems: "center", 
+            width: "100%" 
+        }}>
             <div
                 style={{
                     display: "flex",
@@ -75,9 +52,8 @@ const Work = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     marginBottom: 20
-                }}
-            >
-                <Box 
+                }}>
+            <Box 
                 sx={{ 
                     display: 'flex', 
                     alignItems: 'center',
@@ -104,25 +80,12 @@ const Work = () => {
                     <Tab label="Troisieme Label 2022" value="W5" />
                 </Tabs>
             </Box>
-                <Button variant="contained" onClick={toggleAutoplay}>
+                <Button 
+                    variant="contained" 
+                    onClick={toggleAutoplay}>
                     {autoplay ? "Pause" : "Play"}
                 </Button>
-                <FormControl sx={{ width: "220px" }} size="small">
-                    <InputLabel id="demo-simple-select-label" sx={{ color: "black" }}>Choisir un thème</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        label="Choisir un thème"
-                        value={selectedTimeline}
-                        onChange={handleChange}
-                    >
-                        <MenuItem value="W1">Les architectes du moulin</MenuItem>
-                        <MenuItem value="W2">Moulin en 2001</MenuItem>
-                        <MenuItem value="W3">Premier Label 2005</MenuItem>
-                        <MenuItem value="W4">Deuxieme Label 2015</MenuItem>
-                        <MenuItem value="W5">Troisieme Label 2022</MenuItem>
-                    </Select>
-                </FormControl>
+                
             </div>
             
             <div style={{ width: "80%", maxWidth: "1200px", marginBottom: "20px" }}>
@@ -135,7 +98,7 @@ const Work = () => {
                     autoplay={autoplay} 
                     autoplaySpeed={5000}
                     style={{ height: "500px" }}
-                    key={selectedTimeline}
+                    key={selectedDisplay}
                 >
                     {currentData.images.map((imagePath, index) => (
                         <div key={index}>
