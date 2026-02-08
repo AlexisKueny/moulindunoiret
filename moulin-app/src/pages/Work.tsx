@@ -97,9 +97,10 @@ const Work = () => {
                     arrows
                     autoplay={autoplay} 
                     autoplaySpeed={5000}
-                    style={{ height: "500px" }}
-                    nextArrow={<button style={{ color: "blue" }}>Next</button>}
-                    prevArrow={<button style={{ color: "red" }}>Prev</button>}
+                    style={{ 
+                        height: "500px" 
+                        
+                    }}
                     key={selectedDisplay}
                 >
                     {currentData.images.map((imagePath, index) => (
