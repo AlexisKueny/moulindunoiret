@@ -94,10 +94,12 @@ const Work = () => {
                     <p style={{ textAlign: "center", marginBottom: "20px" }}>{currentData.description}</p>
                 )}
                 <Carousel 
-                    arrows 
+                    arrows
                     autoplay={autoplay} 
                     autoplaySpeed={5000}
                     style={{ height: "500px" }}
+                    nextArrow={<button style={{ color: "blue" }}>Next</button>}
+                    prevArrow={<button style={{ color: "red" }}>Prev</button>}
                     key={selectedDisplay}
                 >
                     {currentData.images.map((imagePath, index) => (
@@ -105,7 +107,7 @@ const Work = () => {
                             <img
                                 alt={`${currentData.title} - ${index + 1}`}
                                 src={imagePath}
-                                style={{ width: "100%", height: "450px", objectFit: "contain" }}
+                                style={{ width: "100%", height: "450px", objectFit: "contain" }}                     
                             />
                         </div>
                     ))}
