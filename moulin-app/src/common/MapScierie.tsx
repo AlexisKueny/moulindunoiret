@@ -28,6 +28,7 @@ const MapButton = ({ x, y, imagePath, pointDescription, onClick }: MapButtonProp
                 left: `${x}%`,
                 transform: "translate(-50%, -50%)",
             }}
+            size="small"
         >
             <AddCircleOutlineRoundedIcon />
         </IconButton>

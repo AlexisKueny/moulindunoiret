@@ -84,9 +84,6 @@ const History = () => {
                         maxWidth: '1400px',
                         paddingY: 1.5,
                         backgroundColor: isPlaying ? '#f44336' : '#4caf50',
-                        '&:hover': {
-                            backgroundColor: isPlaying ? '#d32f2f' : '#45a049'
-                        }
                     }}
                 >
                     {isPlaying ? "Pause" : "Play"}
