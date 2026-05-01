@@ -75,9 +75,9 @@ const Work = () => {
                 >
                     <Tab label="Les architectes du moulin" value="W1" />
                     <Tab label="Moulin en 2001" value="W2" />
-                    <Tab label="Premier Label 2005" value="W3" />
-                    <Tab label="Deuxieme Label 2015" value="W4" />
-                    <Tab label="Troisieme Label 2022" value="W5" />
+                    <Tab label="Période 2005 à 2015" value="W3" />
+                    <Tab label="Période 2015 à 2020" value="W4" />
+                    <Tab label="Période 2020 à 2027" value="W5" />
                 </Tabs>
             </Box>
                 <Button 
