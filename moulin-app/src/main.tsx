@@ -11,7 +11,6 @@ import Work from './pages/Work.tsx'
 import History from './pages/History.tsx'
 import WorkInProgress from './pages/WorkInProgress.tsx'
 import Project from './pages/Project.tsx'
-import AntdConfig from './AntdConfig.tsx'
 
 const theme = createTheme({
   palette: {
@@ -27,7 +26,6 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <CssBaseline >
       <ThemeProvider theme={theme}>
-        <AntdConfig>
           <BrowserRouter>
             {import.meta.env.PROD ? (
               <Routes>
@@ -46,7 +44,6 @@ createRoot(document.getElementById('root')!).render(
               </Routes>
             )}
           </BrowserRouter>
-        </AntdConfig>
       </ThemeProvider>
     </CssBaseline>
   </StrictMode>
