@@ -10,8 +10,8 @@ import { blueGrey, grey } from '@mui/material/colors'
 import Work from './pages/Work.tsx'
 import History from './pages/History.tsx'
 import WorkInProgress from './pages/WorkInProgress.tsx'
-import { ConfigProvider } from 'antd';
 import Project from './pages/Project.tsx'
+import AntdConfig from './AntdConfig.tsx'
 
 const theme = createTheme({
   palette: {
@@ -22,23 +22,6 @@ const theme = createTheme({
     }
   },
 })
-
-const AntdConfig = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <ConfigProvider
-      theme={{
-        components: {
-          Carousel: {
-            /* here is your component tokens */
-            arrowSize: 24,
-          },
-        },
-      }}
-    >
-      {children}
-    </ConfigProvider>
-  )
-}
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
