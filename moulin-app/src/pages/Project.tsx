@@ -1,5 +1,3 @@
-import projetRouesImage from '../assets/ProjetRoues.png';
-
 const Project = () => {
     return (
         <>
@@ -7,7 +5,7 @@ const Project = () => {
                 <img
                     width="50%"
                     height="auto"
-                    src={projetRouesImage}
+                    src="/ProjetRoues.png"
                     alt="Projet Roues"
                 />
             </div>
