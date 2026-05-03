@@ -6,7 +6,7 @@ import W4Data from "../assets/W4_DeuxiemeLabel.json";
 import W5Data from "../assets/W5_TroisiemLabel.json";
 import Button from "@mui/material/Button";
 import { Box, Tab, Tabs } from "@mui/material";
-import { Carousel } from 'antd';
+import { Carousel, ConfigProvider } from 'antd';
 
 interface WorkData {
     title: string;
@@ -93,6 +93,7 @@ const Work = () => {
                 {currentData.description && (
                     <p style={{ textAlign: "center", marginBottom: "20px" }}>{currentData.description}</p>
                 )}
+                <ConfigProvider theme={{ components: { Carousel: { arrowSize: 24 } } }}>
                 <Carousel 
                     arrows
                     autoplay={autoplay} 
@@ -113,6 +114,7 @@ const Work = () => {
                         </div>
                     ))}
                 </Carousel>
+                </ConfigProvider>
             </div>
         </div>
     );
