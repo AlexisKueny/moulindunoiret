@@ -26,24 +26,19 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <CssBaseline >
       <ThemeProvider theme={theme}>
-          <BrowserRouter>
-            {import.meta.env.PROD ? (
-              <Routes>
-                <Route path="*" element={<WorkInProgress />} />
-              </Routes>
-            ) : (
-              <Routes>
-                <Route element={<App />} >
-                  <Route index element={<Home />} />
-                  <Route path="historique" element={<History />} />
-                  <Route path="projet" element={<Project/>} />
-                  <Route path="travaux" element={<Work />} />
-                  <Route path="newsletter" element={<h1>Newsletter</h1>} />
-                  <Route path="*" element={<h1>Page non trouvée</h1>} />
-                </Route>
-              </Routes>
-            )}
-          </BrowserRouter>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<App />} >
+              <Route index element={<Home />} />
+              <Route path="historique" element={<History />} />
+              <Route path="projet" element={<Project />} />
+              <Route path="travaux" element={<Work />} />
+              <Route path="newsletter" element={<h1>Newsletter</h1>} />
+              <Route path="*" element={<h1>Page non trouvée</h1>} />
+            </Route>
+          </Routes>
+
+        </BrowserRouter>
       </ThemeProvider>
     </CssBaseline>
   </StrictMode>
