@@ -1,0 +1,7 @@
+/* Carousel Arrow Styling */
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next {
+  color: black !important;
+}
+
+
