@@ -11,6 +11,7 @@ import Work from './pages/Work.tsx'
 import History from './pages/History.tsx'
 import WorkInProgress from './pages/WorkInProgress.tsx'
 import { ConfigProvider } from 'antd';
+import Project from './pages/Project.tsx'
 
 const theme = createTheme({
   palette: {
@@ -54,7 +55,7 @@ createRoot(document.getElementById('root')!).render(
                 <Route element={<App />} >
                   <Route index element={<Home />} />
                   <Route path="historique" element={<History />} />
-                  <Route path="projet" element={<h1>Projet</h1>} />
+                  <Route path="projet" element={<Project/>} />
                   <Route path="travaux" element={<Work />} />
                   <Route path="newsletter" element={<h1>Newsletter</h1>} />
                   <Route path="*" element={<h1>Page non trouvée</h1>} />
