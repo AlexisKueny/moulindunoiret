@@ -9,7 +9,6 @@ import App from './App.tsx'
 import { blueGrey, grey } from '@mui/material/colors'
 import Work from './pages/Work.tsx'
 import History from './pages/History.tsx'
-import WorkInProgress from './pages/WorkInProgress.tsx'
 import Project from './pages/Project.tsx'
 
 const theme = createTheme({
