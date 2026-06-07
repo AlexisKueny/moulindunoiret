@@ -1,4 +1,4 @@
-import projetRouesImage from '../assets/ProjetRoues.png';
+const projetRouesImage = '/ProjetRoues.png';
 
 const Project = () => {
     return (

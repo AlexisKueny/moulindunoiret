@@ -1,4 +1,4 @@
-import moulinMain from '../assets/HeroCropped.png'
+const moulinMain = '/HeroCropped.png'
 import { Grow } from '@mui/material';
 
 const Home = () => {
