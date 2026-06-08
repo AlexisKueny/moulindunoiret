@@ -49,7 +49,7 @@ export const TimelinePlayer = ({ data, isPlaying}: TimelinePlayerProps) => {
 
         const intervalId = setInterval(loadNextSlide, 3000);
         return () => clearInterval(intervalId);
-    }, [isPlaying]);
+    }, [isPlaying,data]);
 
     return (
         <div style={{ display: "flex", justifyContent: "center", width: "100%", height: "100%" }}>
