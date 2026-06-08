@@ -39,6 +39,8 @@ jobs:
           cache: 'pnpm'
           # Look for the lock file inside the `moulin-app` subfolder where package.json lives
           cache-dependency-path: moulin-app/pnpm-lock.yaml
+      - name: Configure pnpm to allow build scripts
+        run: pnpm config set ignore-scripts false
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
         # install inside the subproject
