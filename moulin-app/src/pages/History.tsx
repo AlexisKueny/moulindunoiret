@@ -37,8 +37,6 @@ const History = () => {
             <MediaControls
                 selectedDisplay={selectedDisplay}
                 onDisplayChange={setSelectedDisplay}
-                isPlaying={isPlaying}
-                onTogglePlay={() => setIsPlaying(!isPlaying)}
                 tabs={[
                     { label: "Cadastres", value: "cadastres" },
                     { label: "Propriétaires", value: "proprietaires" },

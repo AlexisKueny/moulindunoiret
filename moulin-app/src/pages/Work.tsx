@@ -51,8 +51,6 @@ const Work = () => {
             <MediaControls
                 selectedDisplay={selectedDisplay}
                 onDisplayChange={setSelectedDisplay}
-                isPlaying={autoplay}
-                onTogglePlay={toggleAutoplay}
                 tabs={[
                     { label: "Les architectes du moulin", value: "W1" },
                     { label: "Moulin en 2001", value: "W2" },

@@ -4,16 +4,12 @@ import type { JSX } from 'react';
 export interface MediaControlsProps {
     selectedDisplay: string;
     onDisplayChange: (value: string) => void;
-    isPlaying: boolean;
-    onTogglePlay: () => void;
     tabs: { label: string; value: string }[];
 }
 
 export const MediaControls = ({
     selectedDisplay,
     onDisplayChange,
-    isPlaying,
-    onTogglePlay,
     tabs,
 }: MediaControlsProps): JSX.Element => {
     return (
