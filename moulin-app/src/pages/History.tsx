@@ -4,7 +4,7 @@ import proprietairesData from "../assets/H1_proprietaires.json";
 import { TimelinePlayer } from "../common/TimelinePlayer";
 import MapScierie from "../common/MapScierie";
 import {Gallery} from "../common/Gallery";
-import { MediaControls } from "../common/MediaControls";
+import { MediaControls, PlayButton } from "../common/MediaControls";
 
 const History = () => {
     const [selectedDisplay, setSelectedDisplay] = useState<string>("cadastres");
@@ -58,11 +58,15 @@ const History = () => {
             </div>
             {selectedDisplay === "cadastres" && (
                 <div style={{ 
-                    width: '100%',
-                    maxWidth: '1400px',
-                    margin: '0 auto'
+                    display: "flex", 
+                    justifyContent: "center", 
+                    width: "100%", 
+                    marginTop: 20
                 }}>
-                    {/* Play button is now part of MediaControls, shown for all tabs */}
+                    <PlayButton 
+                        isPlaying={isPlaying}
+                        onTogglePlay={() => setIsPlaying(!isPlaying)}
+                    />
                 </div>
             )}
         </div>

@@ -6,7 +6,7 @@ import W4Data from "../assets/W4_DeuxiemeLabel.json";
 import W5Data from "../assets/W5_TroisiemLabel.json";
 import { Carousel, ConfigProvider } from 'antd';
 import { LazyImage } from "../common/LazyImage";
-import { MediaControls } from "../common/MediaControls";
+import { MediaControls, PlayButton } from "../common/MediaControls";
 
 interface WorkData {
     title: string;
@@ -98,6 +98,17 @@ const Work = () => {
                         </ConfigProvider>
                     </div>
                 </div>
+            </div>
+            <div style={{ 
+                display: "flex", 
+                justifyContent: "center", 
+                width: "100%", 
+                marginTop: 20
+            }}>
+                <PlayButton 
+                    isPlaying={autoplay}
+                    onTogglePlay={toggleAutoplay}
+                />
             </div>
         </div>
     );
