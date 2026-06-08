@@ -4,10 +4,9 @@ import W2Data from "../assets/W2_Moulin2001.json";
 import W3Data from "../assets/W3_PremierLabel.json";
 import W4Data from "../assets/W4_DeuxiemeLabel.json";
 import W5Data from "../assets/W5_TroisiemLabel.json";
-import Button from "@mui/material/Button";
-import { Box, Tab, Tabs } from "@mui/material";
 import { Carousel, ConfigProvider } from 'antd';
 import { LazyImage } from "../common/LazyImage";
+import { MediaControls } from "../common/MediaControls";
 
 interface WorkData {
     title: string;
@@ -44,78 +43,61 @@ const Work = () => {
             display: "flex", 
             flexDirection: "column", 
             alignItems: "center", 
-            width: "100%" 
+            width: "100%",
+            paddingLeft: "48px",
+            paddingRight: "48px",
+            paddingBottom: "50px"
         }}>
-            <div
-                style={{
-                    display: "flex",
-                    gap: 20,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    marginBottom: 20
-                }}>
-            <Box 
-                sx={{ 
-                    display: 'flex', 
-                    alignItems: 'center',
-                    gap: 2,
-                    marginBottom: 2
-                }}
-            >
-                <Tabs 
-                    value={selectedDisplay} 
-                    onChange={(_, newValue) => setSelectedDisplay(newValue)}
-                    textColor="inherit"
-                    sx={{ 
-                        borderBottom: 1,
-                        borderColor: 'divider',
-                        '& .MuiTab-root': { 
-                            color: 'rgba(0, 0, 0, 0.87)'
-                        }
-                    }}
-                >
-                    <Tab label="Les architectes du moulin" value="W1" />
-                    <Tab label="Moulin en 2001" value="W2" />
-                    <Tab label="Période 2005 à 2015" value="W3" />
-                    <Tab label="Période 2015 à 2020" value="W4" />
-                    <Tab label="Période 2020 à 2027" value="W5" />
-                </Tabs>
-            </Box>
-                <Button 
-                    variant="contained" 
-                    onClick={toggleAutoplay}>
-                    {autoplay ? "Pause" : "Play"}
-                </Button>
-                
-            </div>
+            <MediaControls
+                selectedDisplay={selectedDisplay}
+                onDisplayChange={setSelectedDisplay}
+                isPlaying={autoplay}
+                onTogglePlay={toggleAutoplay}
+                tabs={[
+                    { label: "Les architectes du moulin", value: "W1" },
+                    { label: "Moulin en 2001", value: "W2" },
+                    { label: "Période 2005 à 2015", value: "W3" },
+                    { label: "Période 2015 à 2020", value: "W4" },
+                    { label: "Période 2020 à 2027", value: "W5" },
+                ]}
+            />
             
-            <div style={{ width: "80%", maxWidth: "1200px", marginBottom: "20px" }}>
-                <h2 style={{ textAlign: "center", marginBottom: "10px" }}>{currentData.title}</h2>
-                {currentData.description && (
-                    <p style={{ textAlign: "center", marginBottom: "20px" }}>{currentData.description}</p>
-                )}
-                <ConfigProvider theme={{ components: { Carousel: { arrowSize: 24 } } }}>
-                <Carousel 
-                    arrows
-                    autoplay={autoplay} 
-                    autoplaySpeed={5000}
-                    style={{ 
-                        height: "500px" 
-                        
-                    }}
-                    key={selectedDisplay}
-                >
-                    {currentData.images.map((imagePath, index) => (
-                        <div key={index}>
-                            <LazyImage
-                                alt={`${currentData.title} - ${index + 1}`}
-                                src={imagePath}
-                                style={{ width: "100%", height: "450px", objectFit: "contain" }}                     
-                            />
-                        </div>
-                    ))}
-                </Carousel>
-                </ConfigProvider>
+            <div style={{ 
+                display: "flex", 
+                justifyContent: "center", 
+                width: "100%", 
+                marginBottom: 20,
+                height: "550px"
+            }}>
+                <div style={{ width: "100%", maxWidth: "1400px", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <div style={{ width: "100%", height: "100%" }}>
+                        <h2 style={{ textAlign: "center", marginBottom: "10px" }}>{currentData.title}</h2>
+                        {currentData.description && (
+                            <p style={{ textAlign: "center", marginBottom: "20px" }}>{currentData.description}</p>
+                        )}
+                        <ConfigProvider theme={{ components: { Carousel: { arrowSize: 24 } } }}>
+                        <Carousel 
+                            arrows
+                            autoplay={autoplay} 
+                            autoplaySpeed={5000}
+                            style={{ 
+                                height: "450px" 
+                            }}
+                            key={selectedDisplay}
+                        >
+                            {currentData.images.map((imagePath, index) => (
+                                <div key={index}>
+                                    <LazyImage
+                                        alt={`${currentData.title} - ${index + 1}`}
+                                        src={imagePath}
+                                        style={{ width: "100%", height: "450px", objectFit: "contain" }}                     
+                                    />
+                                </div>
+                            ))}
+                        </Carousel>
+                        </ConfigProvider>
+                    </div>
+                </div>
             </div>
         </div>
     );

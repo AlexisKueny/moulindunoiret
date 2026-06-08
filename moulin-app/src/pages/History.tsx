@@ -2,10 +2,9 @@ import { useState } from "react";
 import cadastresData from "../assets/H2_cadastres.json";
 import proprietairesData from "../assets/H1_proprietaires.json";
 import { TimelinePlayer } from "../common/TimelinePlayer";
-import Button from "@mui/material/Button";
-import { Box, Tab, Tabs } from "@mui/material";
 import MapScierie from "../common/MapScierie";
 import {Gallery} from "../common/Gallery";
+import { MediaControls } from "../common/MediaControls";
 
 const History = () => {
     const [selectedDisplay, setSelectedDisplay] = useState<string>("cadastres");
@@ -35,31 +34,17 @@ const History = () => {
             paddingBottom: "50px", 
             minHeight: selectedDisplay ? "100vh" : "auto" 
         }}>
-            <Box 
-                sx={{ 
-                    display: 'flex', 
-                    alignItems: 'center',
-                    gap: 2,
-                    marginBottom: 2
-                }}
-            >
-                <Tabs 
-                    value={selectedDisplay} 
-                    onChange={(_, newValue) => setSelectedDisplay(newValue)}
-                    textColor="inherit"
-                    sx={{ 
-                        borderBottom: 1,
-                        borderColor: 'divider',
-                        '& .MuiTab-root': { 
-                            color: 'rgba(0, 0, 0, 0.87)'
-                        }
-                    }}
-                >
-                    <Tab label="Cadastres" value="cadastres" />
-                    <Tab label="Propriétaires" value="proprietaires" />
-                    <Tab label="Scierie BERGERET 1985" value="scierie" />
-                </Tabs>
-            </Box>
+            <MediaControls
+                selectedDisplay={selectedDisplay}
+                onDisplayChange={setSelectedDisplay}
+                isPlaying={isPlaying}
+                onTogglePlay={() => setIsPlaying(!isPlaying)}
+                tabs={[
+                    { label: "Cadastres", value: "cadastres" },
+                    { label: "Propriétaires", value: "proprietaires" },
+                    { label: "Scierie BERGERET 1985", value: "scierie" },
+                ]}
+            />
             <div style={{ 
                 display: "flex", 
                 justifyContent: "center", 
@@ -72,19 +57,13 @@ const History = () => {
                 </div>
             </div>
             {selectedDisplay === "cadastres" && (
-                <Button 
-                    variant="contained" 
-                    size="large"
-                    onClick={() => setIsPlaying(!isPlaying)}
-                    sx={{ 
-                        width: '100%',
-                        maxWidth: '1400px',
-                        paddingY: 1.5,
-                        backgroundColor: isPlaying ? '#f44336' : '#4caf50',
-                    }}
-                >
-                    {isPlaying ? "Pause" : "Play"}
-                </Button>
+                <div style={{ 
+                    width: '100%',
+                    maxWidth: '1400px',
+                    margin: '0 auto'
+                }}>
+                    {/* Play button is now part of MediaControls, shown for all tabs */}
+                </div>
             )}
         </div>
     );
