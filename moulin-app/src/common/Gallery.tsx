@@ -40,11 +40,11 @@ export const Gallery = (data: GalleryProps): JSX.Element => {
                     <ImageListItem 
                         key={item.img}
                         onClick={() => setSelectedImage(item.img)}
-                        sx={{ cursor: 'pointer' }}
+                        sx={{ cursor: 'pointer', height: '300px' }}
                     >
                         <LazyImage
                             src={item.img}
-                            alt={item.title}
+                            alt={item.title!}
                             loading="lazy"
                         />
                     </ImageListItem>
