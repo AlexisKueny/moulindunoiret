@@ -1,4 +1,5 @@
 import { Grow } from '@mui/material';
+import { LazyImage } from '../common/LazyImage';
 
 const Home = () => {
     return (
@@ -24,7 +25,7 @@ const Home = () => {
                             Bienvenue sur le site de la restauration du moulin du Noiret à St Jorioz!
                         </p>
  
-                        <img
+                        <LazyImage
                             src="/HeroCropped.png"
                             alt="moulin home"
                             style={{

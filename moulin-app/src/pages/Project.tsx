@@ -1,8 +1,10 @@
+import { LazyImage } from '../common/LazyImage';
+
 const Project = () => {
     return (
         <>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
-                <img
+                <LazyImage
                     width="50%"
                     height="auto"
                     src="/ProjetRoues.png"

@@ -3,6 +3,7 @@ import { IconButton } from "@mui/material";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { useState } from "react";
+import { LazyImage } from './LazyImage';
 
 interface MapButtonProps {
     x: number;
@@ -41,7 +42,7 @@ const InfoCard = ({ imagePath, pointDescription }: InfoCardProps) => {
                 <h2>Visite de la scierie BERGERET en 1985</h2>
                 <p>{pointDescription}</p>
                 {imagePath && (
-                    <img
+                    <LazyImage
                         src={imagePath}
                         alt="text"
                         height="30%"
@@ -77,7 +78,7 @@ const MapScierie = () => {
             <InfoCard imagePath={selectedPoint.imagePath} pointDescription={selectedPoint.pointDescription} />
             <div style={{ display: "flex", justifyContent: "center", flex: 1, height: "100%" }}>
                 <div style={{ position: "relative", display: "inline-block", height: "100%" }}>
-                    <img
+                    <LazyImage
                         src="/ScierieMap.png"
                         alt="carte scierie"
                         style={{ display: "block", maxHeight: "100%", width: "auto", height: "100%", objectFit: "contain" }}

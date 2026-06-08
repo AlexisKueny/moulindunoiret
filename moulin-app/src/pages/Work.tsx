@@ -7,6 +7,7 @@ import W5Data from "../assets/W5_TroisiemLabel.json";
 import Button from "@mui/material/Button";
 import { Box, Tab, Tabs } from "@mui/material";
 import { Carousel, ConfigProvider } from 'antd';
+import { LazyImage } from "../common/LazyImage";
 
 interface WorkData {
     title: string;
@@ -106,7 +107,7 @@ const Work = () => {
                 >
                     {currentData.images.map((imagePath, index) => (
                         <div key={index}>
-                            <img
+                            <LazyImage
                                 alt={`${currentData.title} - ${index + 1}`}
                                 src={imagePath}
                                 style={{ width: "100%", height: "450px", objectFit: "contain" }}                     

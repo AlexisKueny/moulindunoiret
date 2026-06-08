@@ -5,6 +5,7 @@ import { TimelinePlayer } from "../common/TimelinePlayer";
 import Button from "@mui/material/Button";
 import { Box, Tab, Tabs } from "@mui/material";
 import MapScierie from "../common/MapScierie";
+import {Gallery} from "../common/Gallery";
 
 const History = () => {
     const [selectedDisplay, setSelectedDisplay] = useState<string>("cadastres");
@@ -12,16 +13,12 @@ const History = () => {
 
     const getDisplay = () => {
         switch (selectedDisplay) {
-            case "cadastres": {
-                const data = selectedDisplay === "cadastres" ? cadastresData : cadastresData;
-                return <TimelinePlayer key="timeline" data={data} isPlaying={isPlaying} />;
-            }
-            case "proprietaires": {
-                const data = selectedDisplay === "proprietaires" ? proprietairesData : proprietairesData;
-                return <TimelinePlayer key="timeline" data={data} isPlaying={isPlaying} />;
-            }
+            case "cadastres":
+                return <TimelinePlayer key="timeline" data={cadastresData} isPlaying={isPlaying} />;
+            case "proprietaires":
+                return <Gallery key="gallery" {...proprietairesData} />;
             case "scierie":
-                return <MapScierie/>
+                return <MapScierie />;
             default:
                 return null;
         }
@@ -70,11 +67,11 @@ const History = () => {
                 marginBottom: 20,
                 height: "550px"
             }}>
-                <div style={{ width: "100%", maxWidth: "1400px", height: "100%" }}>
+                <div style={{ width: "100%", maxWidth: "1400px", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     {getDisplay()}
                 </div>
             </div>
-            {selectedDisplay !== "scierie" && (
+            {selectedDisplay === "cadastres" && (
                 <Button 
                     variant="contained" 
                     size="large"
