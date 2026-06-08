@@ -1,4 +1,3 @@
-const moulinMain = '/HeroCropped.png'
 import { Grow } from '@mui/material';
 
 const Home = () => {
@@ -26,7 +25,7 @@ const Home = () => {
                         </p>
  
                         <img
-                            src={moulinMain}
+                            src="/HeroCropped.png"
                             alt="moulin home"
                             style={{
                                 maxWidth: "90%",
