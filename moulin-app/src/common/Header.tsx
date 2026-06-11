@@ -36,7 +36,7 @@ const Header = () => {
           <NavLink to="/historique" icon={HistoryEduRoundedIcon} label="Historique" />
           <NavLink to="/projet" icon={ArchitectureRoundedIcon} label="Projet" />
           <NavLink to="/travaux" icon={ConstructionRoundedIcon} label="Travaux" />
-          <NavLink to="/newsletter" icon={NewspaperRoundedIcon} label="Newsletter" />
+          <NavLink to="/actualités" icon={NewspaperRoundedIcon} label="Actualités" />
         </div>
       </Toolbar>
     </AppBar>

@@ -10,6 +10,7 @@ import { blueGrey, grey } from '@mui/material/colors'
 import Work from './pages/Work.tsx'
 import History from './pages/History.tsx'
 import Project from './pages/Project.tsx'
+import News from './pages/News.tsx'
 
 const theme = createTheme({
   palette: {
@@ -32,11 +33,10 @@ createRoot(document.getElementById('root')!).render(
               <Route path="historique" element={<History />} />
               <Route path="projet" element={<Project />} />
               <Route path="travaux" element={<Work />} />
-              <Route path="newsletter" element={<h1>Newsletter</h1>} />
+              <Route path="actualités" element={<News />} />
               <Route path="*" element={<h1>Page non trouvée</h1>} />
             </Route>
           </Routes>
-
         </BrowserRouter>
       </ThemeProvider>
     </CssBaseline>
