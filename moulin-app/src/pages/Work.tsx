@@ -64,16 +64,13 @@ const Work = () => {
                 display: "flex", 
                 justifyContent: "center", 
                 width: "100%", 
-                marginBottom: 20,
+                marginBottom: 50,
             }}>
                 <div style={{ width: "100%", maxWidth: "1400px" }}>
                     <h2 style={{ textAlign: "center", marginBottom: "10px" }}>{currentData.title}</h2>
-                    {currentData.description && (
-                        <p style={{ textAlign: "center", marginBottom: "20px" }}>{currentData.description}</p>
-                    )}
                     
                     {/* Add bottom margin to carousel container to prevent control overlap */}
-                    <div style={{ marginBottom: "50px" }}>
+                    <div style={{ marginBottom: "10px" }}>
                         <ConfigProvider theme={{ components: { Carousel: { arrowSize: 24 } } }}>
                             <Carousel 
                                 arrows
@@ -86,7 +83,7 @@ const Work = () => {
                                         <LazyImage
                                             alt={`${currentData.title} - ${index + 1}`}
                                             src={imagePath}
-                                            style={{ width: "100%", height: "450px", objectFit: "contain" }}                     
+                                            style={{ width: "100%", height: "400px", objectFit: "contain", marginBottom: "25px" }}                     
                                         />
                                     </div>
                                 ))}
@@ -99,7 +96,6 @@ const Work = () => {
                 display: "flex", 
                 justifyContent: "center", 
                 width: "100%", 
-                marginTop: 20
             }}>
                 <PlayButton 
                     isPlaying={autoplay}

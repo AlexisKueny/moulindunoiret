@@ -26,7 +26,7 @@ const Home = () => {
                         </p>
  
                         <LazyImage
-                            src="/HeroCropped.png"
+                            src="moulin.gif"
                             alt="moulin home"
                             style={{
                                 maxWidth: "90%",
