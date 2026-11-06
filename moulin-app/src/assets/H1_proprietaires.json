@@ -4,7 +4,7 @@
       "url": "/Essai3.png",
       "caption": ""
     },
-    "text": {
+      "text": {
       "headline": "Les propriétaires du moulin",
       "body": ""
     }
@@ -16,11 +16,24 @@
       },
       "text": {
         "headline": "",
-        "text": ""
+        "text": "Cliquer sur les images pour agrandir"
       },
       "media": {
-        "url": "/images_H1/P1.jpg",
+        "url": "../images_H1/P1.jpg",
         "caption": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": 2
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      },
+       "media": {
+        "url": "../images_H1/P2.jpg",
+        "caption": "Détail"
       }
     },
     {
@@ -32,7 +45,7 @@
         "text": ""
       },
       "media": {
-        "url": "/images_H1/P2.jpg",
+        "url": "../images_H1/P3.jpg",
         "caption": "Détail"
       }
     },
@@ -44,21 +57,8 @@
         "headline": "",
         "text": ""
       },
-      "media": {
-        "url": "/images_H1/P3.jpg",
-        "caption": "Détail"
-      }
-    },
-    {
-      "start_date": {
-        "year": 5
-      },
-      "text": {
-        "headline": "",
-        "text": ""
-      },
-      "media": {
-        "url": "/images_H1/P4.jpg",
+       "media": {
+        "url": "../images_H1/P4.jpg",
         "caption": ""
       }
     }
