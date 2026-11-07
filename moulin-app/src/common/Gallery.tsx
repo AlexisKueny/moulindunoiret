@@ -6,11 +6,10 @@ import { LazyImage } from './LazyImage';
 
 export interface GalleryItem {
     img: string
-    title?: string
+    title: string
 }
 
 export interface Event {
-    start_date: { year: number };
     text: { headline: string; text: string };
     media: { url: string; caption: string };
 }
@@ -29,23 +28,24 @@ export const Gallery = (data: GalleryProps): JSX.Element => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const images = data.events.map((event: Event) => ({
-        img: event.media.url,
+        img: `${import.meta.env.BASE_URL}${event.media.url.replace(/^\/+/, '')}`,
         title: event.media.caption || event.text.headline,
     }));
 
     return (
         <>
-            <ImageList cols={images.length} gap={8}>
+            <ImageList cols={2} rowHeight={260} gap={8} sx={{ width: '100%', margin: 0 }}>
                 {images.map((item: GalleryItem) => (
                     <ImageListItem 
                         key={item.img}
                         onClick={() => setSelectedImage(item.img)}
-                        sx={{ cursor: 'pointer', height: '300px' }}
+                        sx={{ cursor: 'pointer' }}
                     >
                         <LazyImage
                             src={item.img}
                             alt={item.title!}
-                            loading="lazy"
+                            loading="eager"
+                            style={{ objectFit: 'contain' }}
                         />
                     </ImageListItem>
                 ))}

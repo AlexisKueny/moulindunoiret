@@ -9,6 +9,7 @@ import { MediaControls, PlayButton } from "../common/MediaControls";
 const History = () => {
     const [selectedDisplay, setSelectedDisplay] = useState<string>("cadastres");
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
+    
 
     const getDisplay = () => {
         switch (selectedDisplay) {
