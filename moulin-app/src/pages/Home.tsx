@@ -26,7 +26,7 @@ const Home = () => {
                         </p>
  
                         <LazyImage
-                            src="moulin.gif"
+                            src={`${import.meta.env.BASE_URL}moulin.gif`}
                             alt="moulin home"
                             style={{
                                 maxWidth: "90%",

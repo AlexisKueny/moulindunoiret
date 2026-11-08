@@ -32,7 +32,7 @@ const Header = () => {
     <AppBar position="static" color="transparent" elevation={0} style={{ boxShadow: 'none', backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
       <Toolbar>
         <div style={{ display: "flex", justifyContent: "center", width: "100%", gap: "20px" }}>
-          <NavLink to="/" icon={HomeRounded} label="Accueil" />
+          <NavLink to="/Accueil" icon={HomeRounded} label="Accueil" />
           <NavLink to="/historique" icon={HistoryEduRoundedIcon} label="Historique" />
           <NavLink to="/projet" icon={ArchitectureRoundedIcon} label="Projet" />
           <NavLink to="/travaux" icon={ConstructionRoundedIcon} label="Travaux" />

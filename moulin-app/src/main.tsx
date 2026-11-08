@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from 'react-router'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router'
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import 'antd/dist/reset.css'
 import './index.css'
@@ -29,12 +29,13 @@ createRoot(document.getElementById('root')!).render(
         <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Routes>
             <Route element={<App />} >
-              <Route index element={<Home />} />
+              <Route index element={<Navigate to="Accueil" replace />} />
               <Route path="historique" element={<History />} />
               <Route path="projet" element={<Project />} />
               <Route path="travaux" element={<Work />} />
               <Route path="actualités" element={<News />} />
-              <Route path="*" element={<h1>Page non trouvée</h1>} />
+              <Route path="Accueil" element={<Home />} />
+              <Route path="*" element={<Home />} />
             </Route>
           </Routes>
         </BrowserRouter>
