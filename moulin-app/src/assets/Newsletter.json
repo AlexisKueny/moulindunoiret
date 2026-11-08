@@ -1,0 +1,53 @@
+{
+  "title": {
+    "media": {
+      "url": "/Essai3.png",
+      "caption": ""
+    },
+    "text": {
+      "headline": "",
+      "body": ""
+    }
+  },
+  "events": [
+    {
+      "start_date": {
+        "year": 1
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      },
+      "media": {
+        "url": "/images_Newsletter/Page-1.jpg",
+        "caption": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": 3
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      },
+      "media": {
+        "url": "/images_Newsletter/Page-2.jpg",
+        "caption": ""
+      }
+    },
+    {
+      "start_date": {
+        "year": 4
+      },
+      "text": {
+        "headline": "",
+        "text": ""
+      },
+      "media": {
+        "url": "/images_Newsletter/Page-3.jpg",
+        "caption": ""
+      }
+    }
+  ]
+}
